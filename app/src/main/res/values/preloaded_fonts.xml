@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/roboto</item>
+        <item>@font/roboto_bold</item>
+        <item>@font/roboto_italic</item>
+        <item>@font/roboto_medium</item>
+        <item>@font/roboto_medium_italic</item>
+        <item>@font/roboto_thin</item>
+        <item>@font/sen</item>
+        <item>@font/sen_bold</item>
+        <item>@font/sen_extrabold</item>
+    </array>
+</resources>

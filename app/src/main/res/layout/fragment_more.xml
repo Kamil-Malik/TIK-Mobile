@@ -8,21 +8,40 @@
     tools:context=".view.MoreFragment">
 
     <Button
-        android:id="@+id/btn_lisensi"
-        android:drawableEnd="@drawable/next"
+        android:id="@+id/btn_profil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_home"
+        android:drawableEnd="@drawable/next"
         android:paddingStart="@dimen/_15sdp"
         android:paddingTop="5dp"
-        android:paddingBottom="5dp"
         android:paddingEnd="@dimen/_15sdp"
-        android:text="@string/daftar_lisensi"
+        android:paddingBottom="5dp"
+        android:text="@string/profil"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/btn_lisensi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_home"
+        android:drawableEnd="@drawable/next"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingTop="5dp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:paddingBottom="5dp"
+        android:text="@string/daftar_lisensi"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_profil"
         tools:ignore="RtlSymmetry" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

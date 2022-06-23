@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "868876891478",
+    "project_id": "mobile-tik-ed48a",
+    "storage_bucket": "mobile-tik-ed48a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868876891478:android:b49f470c438fe13fff12f7",
+        "android_client_info": {
+          "package_name": "com.example.mobiletik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868876891478-4ej7g51bqqbti8s1oqtfu5rj1raef5o4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT2x_lrMDSH82CISS2NbG0vnz4w_SrSjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868876891478-4ej7g51bqqbti8s1oqtfu5rj1raef5o4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

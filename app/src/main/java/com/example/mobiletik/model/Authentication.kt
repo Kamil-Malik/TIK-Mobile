@@ -4,8 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.widget.Toast
 import com.example.mobiletik.utility.Loading
-import com.example.mobiletik.view.auth.LoginActivity
 import com.example.mobiletik.view.MainActivity
+import com.example.mobiletik.view.auth.LoginActivity
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuthEmailException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -116,7 +116,7 @@ object Authentication {
         }
     }
 
-    fun signOut(mActivity : Activity){
+    fun signOut(mActivity : Activity) {
         auth.signOut()
         mActivity.startActivity(Intent(mActivity, LoginActivity::class.java))
         mActivity.finish()

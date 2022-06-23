@@ -1,9 +1,8 @@
-package com.example.mobiletik.view
+package com.example.mobiletik.view.more.profil
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.mobiletik.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.example.mobiletik.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {
@@ -21,14 +20,14 @@ class ProfileActivity : AppCompatActivity() {
         val nis = intent.getStringExtra("nis").toString()
         val email = intent.getStringExtra("email").toString()
 
-        if(nama.isNotEmpty()){
-            binding.nama.text = "Nama\t\t\t\t: $nama"
+        if (nama.isNotEmpty()) {
+            binding.tvNama.text = nama
         }
-        if(nis.isNotEmpty()){
-            binding.nis.text = "NIS\t\t\t\t\t: $nis"
+        if (nis.isNotEmpty()) {
+            binding.tvNis.text = nis
         }
-        if(email.isNotEmpty()){
-            binding.email.text = "Email\t\t\t\t: $email"
+        if (email.isNotEmpty()) {
+            binding.tvEmail.text = email
         }
     }
 

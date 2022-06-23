@@ -1,5 +1,6 @@
 package com.example.mobiletik.view.more.license
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +11,7 @@ class LicenseActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityLicenseBinding
 
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLicenseBinding.inflate(layoutInflater)

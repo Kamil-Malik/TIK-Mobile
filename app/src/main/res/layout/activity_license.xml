@@ -1,34 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/grey"
-    android:padding="@dimen/_15sdp"
-    tools:context=".view.more.license.LicenseActivity">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="@color/dark_green"
+        android:minHeight="?attr/actionBarSize"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:logo="@drawable/logo_icon"
+        app:subtitle="@string/sma_alfalah"
+        app:title="Aplikasi Pembelajaran TIK"
+        app:titleMarginStart="25dp" />
 
-        <TextView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp"
+        tools:context=".view.more.license.LicenseActivity"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/aplikasi_ini_dibangun_menggunakan_lisensi_berikut"
-            android:textColor="@color/black"
-            android:fontFamily="@font/roboto_medium"
-            android:textSize="@dimen/_12sdp"/>
+            android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_license"
-            android:layout_marginTop="16dp"
-            tools:listitem="@layout/license_adapter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/aplikasi_ini_dibangun_menggunakan_lisensi_berikut"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp" />
 
-    </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_license"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                tools:listitem="@layout/license_adapter" />
+
+        </LinearLayout>
 
 
-</ScrollView>
+    </ScrollView>
+
+</LinearLayout>

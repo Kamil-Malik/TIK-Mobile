@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/materi"
+        android:icon="@drawable/materi"
+        android:title="@string/materi" />
+    <item
+        android:id="@+id/diskusi"
+        android:icon="@drawable/message"
+        android:title="@string/forum" />
+    <item
+        android:id="@+id/kuis"
+        android:icon="@drawable/kuis"
+        android:title="@string/kuis" />
+
+    <item
+        android:id="@+id/more"
+        android:icon="@drawable/more"
+        android:title="@string/selengkapnya" />
+</menu>

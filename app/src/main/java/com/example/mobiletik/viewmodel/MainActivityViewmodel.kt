@@ -13,13 +13,12 @@ import com.google.firebase.ktx.Firebase
 
 class MainActivityViewmodel : ViewModel() {
 
-    internal lateinit var userName : String
-    internal lateinit var userNis : String
-    internal lateinit var userEmail : String
+    lateinit var userName : String
+    lateinit var userNis : String
+    lateinit var userEmail : String
 
     fun loadProfile(mActivity : Activity) {
         val database = Firebase.database
-        database.setPersistenceEnabled(true)
         val uid = Authentication.getUID()
         val ref = database.getReference("User").child(uid)
         val loading = Loading(mActivity)
@@ -37,7 +36,6 @@ class MainActivityViewmodel : ViewModel() {
                 loading.dismissLoading()
                 Toast.makeText(mActivity, "Proses dibatalkan", Toast.LENGTH_SHORT).show()
             }
-
         })
     }
 }
