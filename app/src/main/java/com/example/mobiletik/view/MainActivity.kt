@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.mobiletik.R
 import com.example.mobiletik.databinding.ActivityMainBinding
 import com.example.mobiletik.model.Authentication
+import com.example.mobiletik.model.Database
 import com.example.mobiletik.viewmodel.MainActivityViewmodel
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
         val model = MainActivityViewmodel()
         model.loadProfile(this)
 

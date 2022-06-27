@@ -29,6 +29,7 @@
         app:titleTextColor="@color/white" />
 
     <androidx.cardview.widget.CardView
+        app:cardCornerRadius="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_15sdp"
@@ -88,25 +89,27 @@
                 android:id="@+id/tv_nis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/roboto_medium"
                 android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/iv_profil"
                 app:layout_constraintTop_toBottomOf="@+id/tv_nama"
-                tools:layout_editor_absoluteX="150dp"
-                tools:text="8020190088"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                tools:text="8020190088" />
 
             <TextView
                 android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/black"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/roboto_medium_italic"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/iv_profil"
                 app:layout_constraintTop_toBottomOf="@+id/tv_nis"
-                tools:layout_editor_absoluteX="151dp"
-                tools:text="km8003296@gmail.com"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                tools:text="km8003296@gmail.com" />
 
             <ImageView
                 android:id="@+id/logo"

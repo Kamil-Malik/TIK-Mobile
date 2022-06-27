@@ -16,23 +16,13 @@ import com.example.mobiletik.viewmodel.MainActivityViewmodel
 
 class MoreFragment : Fragment(R.layout.fragment_more) {
 
-    private var _binding : FragmentMoreBinding? = null
-    private val binding get() = _binding!!
-
-
-    override fun onCreateView(
-        inflater : LayoutInflater, container : ViewGroup?,
-        savedInstanceState : Bundle?,
-    ) : View? {
-        _binding = FragmentMoreBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
-    }
+    private lateinit var binding : FragmentMoreBinding
 
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentMoreBinding.bind(view)
 
-        val model = ViewModelProvider(this)[MainActivityViewmodel::class.java]
+        ViewModelProvider(this)[MainActivityViewmodel::class.java]
 
         binding.btnLisensi.setOnClickListener {
             startActivity(Intent(context, LicenseActivity::class.java))
@@ -40,19 +30,12 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         binding.btnProfil.setOnClickListener {
             startActivity(Intent(context, ProfileActivity::class.java).apply {
                 try {
-                    putExtra("nama", model.userName)
-                    putExtra("nis", model.userNis)
-                    putExtra("email", model.userEmail)
+
                 }catch (e: Exception){
                     Toast.makeText(context, e.message.toString(), Toast.LENGTH_SHORT).show()
                 }
 
             })
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
