@@ -16,14 +16,16 @@
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/sen.xml" value="0.1" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/sen_bold.xml" value="0.1" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/sen_extrabold.xml" value="0.1" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_kuis.xml" value="0.25" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_license.xml" value="0.33" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_login.xml" value="0.5" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_login.xml" value="0.22026431718061673" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_profil.xml" value="0.1526293287729799" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_profile.xml" value="0.22" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_reset_password.xml" value="0.33" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_chat.xml" value="0.1526293287729799" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_kuis.xml" value="0.25" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_materi.xml" value="0.33" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_more.xml" value="0.2" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/layer_loading.xml" value="0.203125" />

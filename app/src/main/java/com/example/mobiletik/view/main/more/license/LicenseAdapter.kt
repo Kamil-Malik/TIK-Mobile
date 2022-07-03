@@ -1,4 +1,4 @@
-package com.example.mobiletik.view.more.license
+package com.example.mobiletik.view.main.more.license
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

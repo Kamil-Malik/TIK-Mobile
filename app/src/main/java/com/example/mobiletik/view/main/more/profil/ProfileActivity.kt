@@ -1,13 +1,11 @@
-package com.example.mobiletik.view.more.profil
+package com.example.mobiletik.view.main.more.profil
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobiletik.databinding.ActivityProfileBinding
 import com.example.mobiletik.model.Database
-import java.lang.Exception
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -20,13 +18,19 @@ class ProfileActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val userProfile = Database.userData(this)
+        val userData = Database.userDataOffline(this)
+        val userKuis = Database.quizDataOffline(this)
 
         try {
-            binding.tvNama.text = userProfile.nama
-            binding.tvNis.text = userProfile.nis
-            binding.tvEmail.text = userProfile.email
-        } catch (e : Exception){
+            binding.tvNama.text = userData.nama
+            binding.tvNis.text = userData.nis
+            binding.tvEmail.text = userData.email
+            binding.nilaiKuisPertama.text = userKuis.KuisSatu
+            binding.nilaiKuisKedua.text = userKuis.KuisDua
+            binding.nilaiKuisKetiga.text = userKuis.KuisTiga
+            binding.nilaiKuisKeempat.text = userKuis.KuisEmpat
+            binding.nilaiKuisKelima.text = userKuis.KuisLima
+        } catch (e : Exception) {
             Toast.makeText(this, e.message.toString(), Toast.LENGTH_SHORT).show()
         }
     }

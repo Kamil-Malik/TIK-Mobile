@@ -1,4 +1,4 @@
-package com.example.mobiletik.view
+package com.example.mobiletik.view.main
 
 import android.os.Bundle
 import android.view.LayoutInflater

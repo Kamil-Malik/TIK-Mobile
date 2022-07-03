@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import com.example.mobiletik.utility.Loading
-import com.example.mobiletik.view.MainActivity
+import com.example.mobiletik.view.main.MainActivity
 import com.example.mobiletik.view.auth.LoginActivity
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuthEmailException

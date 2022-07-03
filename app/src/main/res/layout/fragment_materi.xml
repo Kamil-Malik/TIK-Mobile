@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/grey"
     android:padding="@dimen/_15sdp"
-    tools:context=".view.MateriFragment">
+    tools:context=".view.main.MateriFragment">
 
     <Button
         android:id="@+id/bab1"
