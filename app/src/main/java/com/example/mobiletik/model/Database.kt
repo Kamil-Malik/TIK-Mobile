@@ -49,8 +49,6 @@ object Database {
             val nis = snapshot.child("Profile").child("nis").value.toString()
             val email = snapshot.child("Profile").child("email").value.toString()
 
-            Toast.makeText(mActivity, "$nama, $nis, $email", Toast.LENGTH_SHORT).show()
-
             //  Data Kuis
             var kuis1 = snapshot.child("Score").child("KuisSatu").value.toString()
             if (kuis1 == "null") {
@@ -72,8 +70,6 @@ object Database {
             if (kuis5 == "null") {
                 kuis5 = "-"
             }
-            Toast.makeText(mActivity, "$kuis1, $kuis2, $kuis3, $kuis4, $kuis5", Toast.LENGTH_SHORT)
-                .show()
             val sharedPref = mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
             with(sharedPref.edit()) {
 
