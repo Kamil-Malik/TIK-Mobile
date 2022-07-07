@@ -1,11 +1,12 @@
-package com.example.mobiletik.view.main.more.license
+package com.example.mobiletik.presentation.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobiletik.databinding.ActivityLicenseBinding
-import com.example.mobiletik.model.LicenseData
+import com.example.mobiletik.model.data.LicenseData
+import com.example.mobiletik.presentation.adapter.LicenseAdapter
 
 class LicenseActivity : AppCompatActivity() {
 

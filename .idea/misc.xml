@@ -5,12 +5,18 @@
       <map>
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/drawable/btn_home.xml" value="0.1945" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/drawable/chat_masuk.xml" value="0.1945" />
+        <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/activity_kuis.xml" value="0.33" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/activity_profile.xml" value="0.33" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/activity_test.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/chat.xml" value="0.4759259259259259" />
-        <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/fragment_chat.xml" value="0.21" />
+        <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/chat_adapter.xml" value="0.25" />
+        <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/fragment_chat.xml" value="0.25" />
+        <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/fragment_kuis.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/fragment_more.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/layer_loading.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/license_adapter.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/btn.xml" value="0.1955" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/btn_home.xml" value="0.193" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/card.xml" value="0.193" />

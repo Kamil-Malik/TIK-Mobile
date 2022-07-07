@@ -1,12 +1,12 @@
-package com.example.mobiletik.view.auth
+package com.example.mobiletik.presentation.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.mobiletik.databinding.ActivityLoginBinding
-import com.example.mobiletik.model.Authentication
-import com.example.mobiletik.viewmodel.LoginActivityViewmodel
+import com.example.mobiletik.model.usecase.Authentication
+import com.example.mobiletik.presentation.viewmodel.LoginActivityViewmodel
 
 class LoginActivity : AppCompatActivity() {
 

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/_10sdp">
+
     <androidx.cardview.widget.CardView
         android:id="@+id/chatMasuk"
         android:layout_width="wrap_content"
@@ -16,11 +17,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/_10sdp"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/namaPengirim"
                 android:layout_width="wrap_content"
@@ -28,6 +31,7 @@
                 android:fontFamily="@font/roboto_bold"
                 android:textColor="@color/black"
                 tools:text="LeleStacia" />
+
             <TextView
                 android:id="@+id/pesanDiterima"
                 android:layout_width="wrap_content"
@@ -38,6 +42,7 @@
                 tools:text="@string/lorem_long" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/chatKeluar"
         android:layout_width="match_parent"
@@ -55,13 +60,7 @@
             android:layout_margin="@dimen/_10sdp"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/namaSaya"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_bold"
-                tools:text="KamilMalik" />
-            <TextView
-                android:id="@+id/pesanPengirim"
+                android:id="@+id/pesanDikirim"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

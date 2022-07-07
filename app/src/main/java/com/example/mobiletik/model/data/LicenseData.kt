@@ -1,4 +1,4 @@
-package com.example.mobiletik.model
+package com.example.mobiletik.model.data
 
 class LicenseData(
     val judulLisensi : String,

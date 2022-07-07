@@ -1,12 +1,13 @@
-package com.example.mobiletik.model
+package com.example.mobiletik.model.usecase
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
+import com.example.mobiletik.model.data.UserInfo
 import com.example.mobiletik.utility.Loading
-import com.example.mobiletik.view.main.MainActivity
-import com.example.mobiletik.view.auth.LoginActivity
+import com.example.mobiletik.presentation.view.MainActivity
+import com.example.mobiletik.presentation.view.LoginActivity
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuthEmailException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException

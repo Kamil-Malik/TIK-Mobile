@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/grey"
     android:orientation="vertical"
-    tools:context=".view.main.KuisFragment">
+    tools:context=".presentation.view.KuisFragment">
 
     <Button
         android:id="@+id/btnKuis1"
@@ -60,6 +60,42 @@
         android:text="@string/kuis_3"
         android:textAlignment="textStart"
         android:textColor="@color/black"
+        tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/btnKuis4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_home"
+        android:drawableEnd="@drawable/next"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingTop="5dp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:paddingBottom="5dp"
+        android:text="@string/kuis_4"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/btnKuis5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_home"
+        android:drawableEnd="@drawable/next"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingTop="5dp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:paddingBottom="5dp"
+        android:text="@string/kuis_5"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlSymmetry" />
 
 </LinearLayout>

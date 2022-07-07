@@ -1,4 +1,4 @@
-package com.example.mobiletik.view.main
+package com.example.mobiletik.presentation.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.mobiletik.R
 import com.example.mobiletik.databinding.FragmentMoreBinding
-import com.example.mobiletik.view.main.more.license.LicenseActivity
-import com.example.mobiletik.view.main.more.profil.ProfileActivity
-import com.example.mobiletik.viewmodel.MainActivityViewmodel
+import com.example.mobiletik.presentation.viewmodel.MainActivityViewmodel
 
 class MoreFragment : Fragment(R.layout.fragment_more) {
 

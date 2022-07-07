@@ -1,10 +1,10 @@
-package com.example.mobiletik.view.auth
+package com.example.mobiletik.presentation.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.mobiletik.databinding.ActivityRegisterBinding
-import com.example.mobiletik.viewmodel.RegisterActivityViewmodel
+import com.example.mobiletik.presentation.viewmodel.RegisterActivityViewmodel
 
 class RegisterActivity : AppCompatActivity() {
 

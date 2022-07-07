@@ -30,7 +30,7 @@
         android:background="@color/grey"
         android:orientation="vertical"
         android:padding="@dimen/_15sdp"
-        tools:context=".view.main.more.license.LicenseActivity"
+        tools:context=".presentation.view.LicenseActivity"
         tools:ignore="UselessParent">
 
         <LinearLayout

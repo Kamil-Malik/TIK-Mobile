@@ -1,11 +1,11 @@
-package com.example.mobiletik.view.main.more.profil
+package com.example.mobiletik.presentation.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobiletik.databinding.ActivityProfileBinding
-import com.example.mobiletik.model.Database
+import com.example.mobiletik.model.usecase.DatabaseUser
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -18,8 +18,8 @@ class ProfileActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val userData = Database.userDataOffline(this)
-        val userKuis = Database.quizDataOffline(this)
+        val userData = DatabaseUser.userDataOffline(this)
+        val userKuis = DatabaseUser.quizDataOffline(this)
 
         try {
             binding.tvNama.text = userData.nama

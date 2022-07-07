@@ -1,4 +1,4 @@
-package com.example.mobiletik.model
+package com.example.mobiletik.model.data
 
 data class ScoreKuis(
     val KuisSatu : String,

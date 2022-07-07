@@ -15,33 +15,33 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".view.main.KuisActivity"
+            android:name=".presentation.view.KuisActivity"
             android:exported="false" />
         <activity
-            android:name=".view.main.more.license.LicenseActivity"
+            android:name=".presentation.view.LicenseActivity"
             android:exported="false" />
         <activity
-            android:name=".view.main.more.profil.ProfileActivity"
+            android:name=".presentation.view.ProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".view.main.MainActivity"
+            android:name=".presentation.view.MainActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".view.auth.ResetPasswordActivity"
+            android:name=".presentation.view.ResetPasswordActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".view.auth.RegisterActivity"
+            android:name=".presentation.view.RegisterActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".view.auth.LoginActivity"
+            android:name=".presentation.view.LoginActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">

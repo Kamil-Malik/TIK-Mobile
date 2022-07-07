@@ -1,10 +1,10 @@
-package com.example.mobiletik.viewmodel
+package com.example.mobiletik.presentation.viewmodel
 
 import android.util.Patterns
 import androidx.lifecycle.ViewModel
-import com.example.mobiletik.model.Authentication
-import com.example.mobiletik.model.UserInfo
-import com.example.mobiletik.view.auth.RegisterActivity
+import com.example.mobiletik.model.usecase.Authentication
+import com.example.mobiletik.model.data.UserInfo
+import com.example.mobiletik.presentation.view.RegisterActivity
 
 class RegisterActivityViewmodel : ViewModel() {
 

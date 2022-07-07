@@ -1,12 +1,12 @@
-package com.example.mobiletik.view.main
+package com.example.mobiletik.presentation.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.mobiletik.R
 import com.example.mobiletik.databinding.ActivityMainBinding
-import com.example.mobiletik.model.Authentication
-import com.example.mobiletik.viewmodel.MainActivityViewmodel
+import com.example.mobiletik.model.usecase.Authentication
+import com.example.mobiletik.presentation.viewmodel.MainActivityViewmodel
 
 class MainActivity : AppCompatActivity() {
 

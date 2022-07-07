@@ -1,14 +1,15 @@
-package com.example.mobiletik.view.main
+package com.example.mobiletik.presentation.view
 
 import android.content.Context
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.mobiletik.databinding.ActivityKuisBinding
-import com.example.mobiletik.model.Database
+import com.example.mobiletik.model.usecase.DatabaseUser
+import com.example.mobiletik.presentation.viewmodel.KuisActivityViewmodel
 import com.example.mobiletik.utility.Loading
-import com.example.mobiletik.viewmodel.KuisActivityViewmodel
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
@@ -74,24 +75,50 @@ class KuisActivity : AppCompatActivity() {
                 switch(this, quizTitle, indexQuestion, model, score)
             }
         }
+
+    }
+
+    override fun onBackPressed() {
+        val scoreAkhir = score
+        if (scoreAkhir != 0) {
+            val quizTitle = intent.getStringExtra("nomor").toString()
+            DatabaseUser.uploadScore(this, quizTitle, scoreAkhir)
+            toastScore(scoreAkhir)
+            finish()
+        } else {
+            finish()
+        }
     }
 
     private fun switch(
-        mActivity : KuisActivity,
-        context : String,
-        index : Int,
-        model : KuisActivityViewmodel,
-        score : Int
+        mActivity: KuisActivity,
+        context: String,
+        index: Int,
+        model: KuisActivityViewmodel,
+        score: Int
     ) {
         if (this.indexQuestion <= 5) {
             model.getQuestion(mActivity, context, index)
         } else if (this.indexQuestion > 5) {
             toastScore(score)
-            Database.uploadScore(this, context, score)
+            DatabaseUser.uploadScore(this, context, score)
         }
     }
 
-    private fun toastScore(score : Int) {
+    fun startTimer() {
+        val timer = object : CountDownTimer(60000, 1000) {
+            override fun onTick(time: Long) {
+                binding.timer.text = "Sisa Waktu : ${time.toInt() / 1000} Detik"
+            }
+
+            override fun onFinish() {
+                binding.btnNext.callOnClick()
+            }
+        }
+        timer.start()
+    }
+
+    private fun toastScore(score: Int) {
         if (score >= 80) {
             Toast.makeText(
                 this,
@@ -113,7 +140,6 @@ class KuisActivity : AppCompatActivity() {
             ).show()
         }
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

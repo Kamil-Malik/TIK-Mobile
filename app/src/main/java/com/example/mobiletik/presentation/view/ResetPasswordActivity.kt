@@ -1,11 +1,11 @@
-package com.example.mobiletik.view.auth
+package com.example.mobiletik.presentation.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.mobiletik.databinding.ActivityResetPasswordBinding
-import com.example.mobiletik.viewmodel.ResetPasswordActivityViewmodel
+import com.example.mobiletik.presentation.viewmodel.ResetPasswordActivityViewmodel
 
 class ResetPasswordActivity : AppCompatActivity() {
 

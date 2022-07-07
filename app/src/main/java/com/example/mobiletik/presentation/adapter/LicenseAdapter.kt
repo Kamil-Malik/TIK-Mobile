@@ -1,11 +1,11 @@
-package com.example.mobiletik.view.main.more.license
+package com.example.mobiletik.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobiletik.databinding.LicenseAdapterBinding
-import com.example.mobiletik.model.LicenseData
+import com.example.mobiletik.model.data.LicenseData
 
 class LicenseAdapter(private val licenseData : List<LicenseData>) :
     RecyclerView.Adapter<LicenseAdapter.ViewHolder>() {

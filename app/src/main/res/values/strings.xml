@@ -45,7 +45,7 @@
     <string name="email_profil">Email\t\t\t:</string>
     <string name="nis_profil">NIS\t\t\t\t:</string>
     <string name="hasil_kuis">Hasil Kuis</string>
-    <string name="kuis_pertama">Kuis Pertama\t\t\t:</string>
+    <string name="kuis_pertama">Kuis Pertama\t\t:</string>
     <string name="kuis_kedua">Kuis Kedua \t\t\t\t:</string>
     <string name="kuis_ketiga">Kuis Ketiga \t\t\t\t:</string>
     <string name="kuis_keempat">Kuis Keempat \t\t:</string>
@@ -53,4 +53,15 @@
     <string name="lorem_long">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="isi_pesan">Isi Pesan</string>
     <string name="kirim">Kirim</string>
+    <string name="kuis_4">Kuis 4</string>
+    <string name="kuis_5">Kuis 5</string>
+    <string name="selanjutnya">Selanjutnya</string>
+
+    <string-array name="kuis">
+        <item>Kuis 1</item>
+        <item>Kuis 2</item>
+        <item>Kuis 3</item>
+        <item>Kuis 4</item>
+        <item>Kuis 5</item>
+    </string-array>
 </resources>

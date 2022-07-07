@@ -1,9 +1,9 @@
-package com.example.mobiletik.viewmodel
+package com.example.mobiletik.presentation.viewmodel
 
 import android.util.Patterns
 import androidx.lifecycle.ViewModel
-import com.example.mobiletik.model.Authentication
-import com.example.mobiletik.view.auth.LoginActivity
+import com.example.mobiletik.model.usecase.Authentication
+import com.example.mobiletik.presentation.view.LoginActivity
 
 class LoginActivityViewmodel : ViewModel() {
 

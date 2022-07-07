@@ -1,4 +1,4 @@
-package com.example.mobiletik.view.main
+package com.example.mobiletik.presentation.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -21,6 +21,15 @@ class KuisFragment : Fragment(R.layout.fragment_kuis) {
         }
         binding.btnKuis2.setOnClickListener {
             startActivity(Intent(context, KuisActivity::class.java).putExtra("nomor", "KuisDua"))
+        }
+        binding.btnKuis3.setOnClickListener {
+            startActivity(Intent(context, KuisActivity::class.java).putExtra("nomor","KuisTiga"))
+        }
+        binding.btnKuis4.setOnClickListener {
+            startActivity(Intent(context, KuisActivity::class.java).putExtra("nomor","KuisEmpat"))
+        }
+        binding.btnKuis5.setOnClickListener {
+            startActivity(Intent(context, KuisActivity::class.java).putExtra("nomor","KuisLima"))
         }
     }
 }

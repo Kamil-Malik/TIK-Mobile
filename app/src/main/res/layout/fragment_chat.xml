@@ -5,35 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".view.main.ChatFragment">
-
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/dark_green"
-        android:minHeight="?attr/actionBarSize"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:logo="@drawable/logo_icon"
-        app:menu="@menu/toolbar"
-        app:subtitle="@string/sma_alfalah"
-        app:title="Aplikasi Pembelajaran TIK"
-        app:titleMarginStart="25dp" />
+    tools:context=".presentation.view.ChatFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_chat"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/layoutMenu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutMenu"

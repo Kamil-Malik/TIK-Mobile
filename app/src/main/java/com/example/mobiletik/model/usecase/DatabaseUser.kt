@@ -1,16 +1,18 @@
-package com.example.mobiletik.model
+package com.example.mobiletik.model.usecase
 
 import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
-import com.example.mobiletik.model.Authentication.getUID
+import com.example.mobiletik.model.data.ScoreKuis
+import com.example.mobiletik.model.data.UserInfo
+import com.example.mobiletik.model.usecase.Authentication.getUID
 import com.example.mobiletik.utility.Loading
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-object Database {
-    private val database = Firebase.database
+object DatabaseUser {
+    private val database = Firebase.database.getReference("User")
 
     fun checkUser(mActivity : Activity) {
         if (checkProfile(mActivity)) {
@@ -42,7 +44,7 @@ object Database {
         val loading = Loading(mActivity)
         loading.startLoading()
 
-        database.getReference("User").child(getUID()).get().addOnSuccessListener { snapshot ->
+        database.child(getUID()).get().addOnSuccessListener { snapshot ->
 
             //  Data Profile
             val nama = snapshot.child("Profile").child("nama").value.toString()
@@ -123,7 +125,7 @@ object Database {
         loading.startLoading()
         mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE).edit()
             .putString(index, score.toString()).apply()
-        database.getReference("User").child(getUID()).child("Score").child(index)
+        database.child(getUID()).child("Score").child(index)
             .setValue(score.toString())
             .addOnSuccessListener {
                 loading.dismissLoading()

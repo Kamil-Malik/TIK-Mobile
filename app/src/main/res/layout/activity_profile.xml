@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey"
-    tools:context=".view.main.more.profil.ProfileActivity">
+    tools:context=".presentation.view.ProfileActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -220,7 +220,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView11"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription,ImageContrastCheck" />
 
             <TextView
                 android:id="@+id/nilaiKuisPertama"
