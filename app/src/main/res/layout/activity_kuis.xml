@@ -64,13 +64,13 @@
         tools:text="Jawaban A" />
 
     <Button
-        android:justificationMode="inter_word"
         android:id="@+id/opsiB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_home"
         android:drawableEnd="@drawable/next"
+        android:justificationMode="inter_word"
         android:paddingStart="@dimen/_10sdp"
         android:textAlignment="textStart"
         android:textColor="@color/black"
@@ -81,13 +81,13 @@
         tools:text="Jawaban B" />
 
     <Button
-        android:justificationMode="inter_word"
         android:id="@+id/opsiC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_home"
         android:drawableEnd="@drawable/next"
+        android:justificationMode="inter_word"
         android:paddingStart="@dimen/_10sdp"
         android:textAlignment="textStart"
         android:textColor="@color/black"
@@ -98,13 +98,13 @@
         tools:text="Jawaban C" />
 
     <Button
-        android:justificationMode="inter_word"
         android:id="@+id/opsiD"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_home"
         android:drawableEnd="@drawable/next"
+        android:justificationMode="inter_word"
         android:paddingStart="@dimen/_10sdp"
         android:textAlignment="textStart"
         android:textColor="@color/black"

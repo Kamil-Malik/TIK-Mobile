@@ -1,9 +1,9 @@
 package com.example.mobiletik.model.data
 
 data class ScoreKuis(
-    val KuisSatu : String,
-    val KuisDua : String,
-    val KuisTiga : String,
-    val KuisEmpat : String,
-    val KuisLima : String
+    val KuisSatu : Long,
+    val KuisDua : Long,
+    val KuisTiga : Long,
+    val KuisEmpat : Long,
+    val KuisLima : Long
 )

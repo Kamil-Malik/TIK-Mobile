@@ -1,11 +1,17 @@
 package com.example.mobiletik.presentation.view
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.example.mobiletik.R
 import com.example.mobiletik.databinding.ActivityProfileBinding
-import com.example.mobiletik.model.usecase.DatabaseUser
+import com.example.mobiletik.domain.usecase.UserData.getUserDataFromSharedpref
+import com.google.firebase.firestore.core.ActivityScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -17,26 +23,33 @@ class ProfileActivity : AppCompatActivity() {
         binding = ActivityProfileBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        val userData = DatabaseUser.userDataOffline(this)
-        val userKuis = DatabaseUser.quizDataOffline(this)
-
-        try {
-            binding.tvNama.text = userData.nama
-            binding.tvNis.text = userData.nis
-            binding.tvEmail.text = userData.email
-            binding.nilaiKuisPertama.text = userKuis.KuisSatu
-            binding.nilaiKuisKedua.text = userKuis.KuisDua
-            binding.nilaiKuisKetiga.text = userKuis.KuisTiga
-            binding.nilaiKuisKeempat.text = userKuis.KuisEmpat
-            binding.nilaiKuisKelima.text = userKuis.KuisLima
-        } catch (e : Exception) {
-            Toast.makeText(this, e.message.toString(), Toast.LENGTH_SHORT).show()
+        val data = getUserDataFromSharedpref(this)
+        val finalScore = (data.kuisSatu + data.kuisDua + data.kuisTiga + data.kuisEmpat + data.kuisLima) / 5
+        val textJudulNilai = resources.getStringArray(R.array.judulKuis)
+        lifecycleScope.launch(Dispatchers.Main){
+            with(binding){
+                tvNama.text = data.userName
+                tvNis.text = data.userNIS
+                tvEmail.text = data.userEmail
+                tvHasilKuisSatu.text = data.kuisSatu.toString()
+                tvHasilKuisDua.text = data.kuisDua.toString()
+                tvHasilKuisTiga.text = data.kuisTiga.toString()
+                tvHasilKuisEmpat.text = data.kuisEmpat.toString()
+                tvHasilKuisLima.text = data.kuisLima.toString()
+                tvHasilKuisFinal.text = finalScore.toInt().toString()
+                tvKuis1.text = textJudulNilai[0]
+                tvKuis2.text = textJudulNilai[1]
+                tvKuis3.text = textJudulNilai[2]
+                tvKuis4.text = textJudulNilai[3]
+                tvKuis5.text = textJudulNilai[4]
+            }
+        }
+        binding.fabBack.setOnClickListener{
+            onBackPressed()
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onBackPressed() {
         finish()
     }
 }

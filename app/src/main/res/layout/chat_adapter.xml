@@ -3,69 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="@dimen/_10sdp">
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:paddingStart="@dimen/_10sdp"
+    android:paddingEnd="@dimen/_10sdp">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:id="@+id/chatMasuk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="@dimen/_200sdp"
-        app:cardBackgroundColor="@color/green"
-        app:cardCornerRadius="@dimen/_10sdp"
-        app:cardElevation="@dimen/_10sdp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:maxWidth="@dimen/_150sdp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/_10sdp"
-            android:orientation="vertical">
+        <TextView
+            android:id="@+id/senderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            tools:text="Insannur Kamil Malik" />
 
-            <TextView
-                android:id="@+id/namaPengirim"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_bold"
-                android:textColor="@color/black"
-                tools:text="LeleStacia" />
+        <TextView
+            android:id="@+id/pesanDiterima"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/chat_masuk"
+            android:fontFamily="@font/roboto"
+            android:justificationMode="inter_word"
+            android:maxWidth="@dimen/_125sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+            tools:text="@string/lorem_long" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/pesanDiterima"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:justificationMode="inter_word"
-                android:textColor="@color/black"
-                tools:text="@string/lorem_long" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/chatKeluar"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/pesanDikirim"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:cardBackgroundColor="@color/dark_green"
-        app:cardCornerRadius="@dimen/_10sdp"
-        app:cardElevation="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/chat_keluar"
+        android:justificationMode="inter_word"
+        android:maxWidth="@dimen/_125sdp"
+        android:textSize="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chatMasuk">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/_10sdp"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/pesanDikirim"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:justificationMode="inter_word"
-                tools:text="@string/lorem_long" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@id/chatMasuk"
+        tools:text="@string/lorem_long" />
 </androidx.constraintlayout.widget.ConstraintLayout>
