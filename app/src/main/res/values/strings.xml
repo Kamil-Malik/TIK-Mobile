@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Mobile TIK</string>
     <string name="silahkan_masuk_untuk_melanjutkan">Silahkan Masuk untuk melanjutkan</string>
     <string name="selamat_datang">Selamat Datang</string>
@@ -27,41 +27,49 @@
     <string name="silahkan_isi_form_reset_password">Silahkan isi form Reset Password</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="bab_1">BAB 1 - Operasi Dasar Komputer</string>
-    <string name="bab2">Bab 2 - Fungsi dan Proses Kerja Peralatan Teknologi Informasi dan Komunikasi</string>
-    <string name="bab4">Bab 4 - Sistem Operasi Komputer</string>
-    <string name="bab5">Bab 5 - Menggunakan Perangkat Lunak Pengolah Kata</string>
-    <string name="bab3">Bab 3 - Etika dan Moral dalam Teknologi Informasi dan Komunikasi</string>
     <string name="daftar_lisensi">Daftar Lisensi</string>
     <string name="aplikasi_ini_dibangun_menggunakan_lisensi_berikut">Aplikasi ini dibangun menggunakan lisensi berikut :</string>
     <string name="upload_foto">Upload Foto</string>
-    <string name="kuis_1">Kuis 1</string>
-    <string name="kuis_2">Kuis 2</string>
-    <string name="kuis_3">Kuis 3</string>
     <string name="operasi_dasar_komputer">Operasi Dasar Komputer</string>
     <string name="nilai_kosong">-</string>
     <string name="e_raport">E-Raport</string>
     <string name="nama_profil">Nama\t\t\t:</string>
     <string name="email_profil">Email\t\t\t:</string>
-    <string name="nis_profil">NIS\t\t\t\t:</string>
+    <string name="nis_profil">NIS\t\t\t\t\t:</string>
     <string name="hasil_kuis">Hasil Kuis</string>
-    <string name="kuis_pertama">Kuis Pertama\t\t:</string>
-    <string name="kuis_kedua">Kuis Kedua \t\t\t\t:</string>
-    <string name="kuis_ketiga">Kuis Ketiga \t\t\t\t:</string>
-    <string name="kuis_keempat">Kuis Keempat \t\t:</string>
-    <string name="kuis_kelima">Kuis Kelima \t\t\t:</string>
     <string name="lorem_long">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="isi_pesan">Isi Pesan</string>
     <string name="kirim">Kirim</string>
-    <string name="kuis_4">Kuis 4</string>
-    <string name="kuis_5">Kuis 5</string>
     <string name="selanjutnya">Selanjutnya</string>
 
-    <string-array name="kuis">
+    <string name="kuisTelahDikerjakan">Anda telah mengerjakan Kuis ini</string>
+    <string name="selamatMengerjakan">Selamat mengerjakan kuis ini</string>
+    <string name="backbtn">backBtn</string>
+    <string name="final_txt">Final</string>
+
+
+    <string-array name="judulKuis">
         <item>Kuis 1</item>
         <item>Kuis 2</item>
         <item>Kuis 3</item>
         <item>Kuis 4</item>
         <item>Kuis 5</item>
     </string-array>
+
+    <string-array name="judulMateri">
+        <item>BAB 1 - Operasi Dasar Komputer</item>
+        <item>Bab 2 - Fungsi dan Proses Kerja Peralatan Teknologi Informasi dan Komunikasi</item>
+        <item>Bab 3 - Etika dan Moral dalam Teknologi Informasi dan Komunikasi</item>
+        <item>Bab 4 - Sistem Operasi Komputer</item>
+        <item>Bab 5 - Menggunakan Perangkat Lunak Pengolah Kata</item>
+    </string-array>
+
+    <string-array name="urlMateri">
+        <item tools:ignore="TypographyDashes">https://62cd316a87c40b4982e995b2--unrivaled-concha-459c60.netlify.app/</item>
+    </string-array>
+
+    <string name="title_activity_bab_pertama">BabPertamaActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="mengaktifkan_dan_mematikan_komputer_sesuai_prosedur">Mengaktifkan dan mematikan komputer sesuai prosedur</string>
 </resources>

@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.mobiletik.databinding.ActivityLoginBinding
-import com.example.mobiletik.model.usecase.Authentication
+import com.example.mobiletik.domain.usecase.Authentication
 import com.example.mobiletik.presentation.viewmodel.LoginActivityViewmodel
 
 class LoginActivity : AppCompatActivity() {
@@ -27,13 +27,21 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.resetPassword.setOnClickListener {
-            startActivity(Intent(this,
-                ResetPasswordActivity::class.java))
+            startActivity(
+                Intent(
+                    this,
+                    ResetPasswordActivity::class.java
+                )
+            )
         }
 
         binding.daftar.setOnClickListener {
-            startActivity(Intent(this,
-                RegisterActivity::class.java))
+            startActivity(
+                Intent(
+                    this,
+                    RegisterActivity::class.java
+                )
+            )
         }
     }
 }

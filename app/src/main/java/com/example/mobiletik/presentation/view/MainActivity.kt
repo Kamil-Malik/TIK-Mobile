@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.mobiletik.R
 import com.example.mobiletik.databinding.ActivityMainBinding
-import com.example.mobiletik.model.usecase.Authentication
+import com.example.mobiletik.domain.usecase.Authentication
 import com.example.mobiletik.presentation.viewmodel.MainActivityViewmodel
 
 class MainActivity : AppCompatActivity() {

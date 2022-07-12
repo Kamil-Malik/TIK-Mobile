@@ -1,22 +1,21 @@
 package com.example.mobiletik.presentation.view
 
-import android.content.Context
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.mobiletik.databinding.ActivityKuisBinding
-import com.example.mobiletik.model.usecase.DatabaseUser
+import com.example.mobiletik.domain.usecase.Firestore.updateQuizScoreInFirestore
 import com.example.mobiletik.presentation.viewmodel.KuisActivityViewmodel
-import com.example.mobiletik.utility.Loading
+import com.example.mobiletik.model.utility.Loading
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class KuisActivity : AppCompatActivity() {
 
     internal lateinit var binding : ActivityKuisBinding
-    var correctAnswer = ""
+    var correctAnswer : String = ""
     var answer = ""
     var score = 0
     var indexQuestion = 1
@@ -30,13 +29,6 @@ class KuisActivity : AppCompatActivity() {
         val quizTitle = intent.getStringExtra("nomor").toString()
         val loading = Loading(this)
         loading.startLoading()
-        val sharedPref = getSharedPreferences("userProfile", Context.MODE_PRIVATE)
-        if (sharedPref.getString(quizTitle, "-") != "-") {
-            Toast.makeText(this, "Anda telah mengerjakan kuis ini", Toast.LENGTH_SHORT).show()
-            finish()
-        } else {
-            Toast.makeText(this, "Selamat Mengerjakan", Toast.LENGTH_SHORT).show()
-        }
         Firebase.database.getReference("Kuis").child(quizTitle).child("judul").get()
             .addOnSuccessListener { snapshot ->
                 binding.judulKuis.text = snapshot.value.toString()
@@ -44,23 +36,24 @@ class KuisActivity : AppCompatActivity() {
             }
         val model = ViewModelProvider(this)[KuisActivityViewmodel::class.java]
         model.getQuestion(this, quizTitle, indexQuestion)
-        binding.jawabanUser.text = answer
 
-        binding.opsiA.setOnClickListener {
-            binding.jawabanUser.text = binding.opsiA.text.toString()
-        }
-        binding.opsiB.setOnClickListener {
-            binding.jawabanUser.text = binding.opsiB.text.toString()
-        }
-        binding.opsiC.setOnClickListener {
-            binding.jawabanUser.text = binding.opsiC.text.toString()
-        }
-        binding.opsiD.setOnClickListener {
-            binding.jawabanUser.text = binding.opsiD.text.toString()
+        with(binding) {
+            jawabanUser.text = answer
+            opsiA.setOnClickListener {
+                jawabanUser.text = opsiA.text
+            }
+            opsiB.setOnClickListener {
+                jawabanUser.text = opsiB.text
+            }
+            opsiC.setOnClickListener {
+                jawabanUser.text = opsiC.text
+            }
+            opsiD.setOnClickListener {
+                jawabanUser.text = opsiD.text
+            }
         }
         binding.btnNext.setOnClickListener {
-            answer = binding.jawabanUser.text.toString()
-            if (answer == correctAnswer) {
+            if (binding.jawabanUser.text == correctAnswer) {
                 score += 20
                 indexQuestion += 1
                 binding.jawabanUser.text = ""
@@ -75,14 +68,13 @@ class KuisActivity : AppCompatActivity() {
                 switch(this, quizTitle, indexQuestion, model, score)
             }
         }
-
     }
 
-    override fun onBackPressed() {
+    fun safety() {
         val scoreAkhir = score
         if (scoreAkhir != 0) {
             val quizTitle = intent.getStringExtra("nomor").toString()
-            DatabaseUser.uploadScore(this, quizTitle, scoreAkhir)
+            updateQuizScoreInFirestore(this, quizTitle, scoreAkhir)
             toastScore(scoreAkhir)
             finish()
         } else {
@@ -90,24 +82,29 @@ class KuisActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        safety()
+    }
+
     private fun switch(
-        mActivity: KuisActivity,
-        context: String,
-        index: Int,
-        model: KuisActivityViewmodel,
-        score: Int
+        mActivity : KuisActivity,
+        context : String,
+        index : Int,
+        model : KuisActivityViewmodel,
+        score : Int
     ) {
-        if (this.indexQuestion <= 5) {
+        if(indexQuestion<=5){
             model.getQuestion(mActivity, context, index)
-        } else if (this.indexQuestion > 5) {
+        }
+        else{
             toastScore(score)
-            DatabaseUser.uploadScore(this, context, score)
+            updateQuizScoreInFirestore(this, context, score)
         }
     }
 
     fun startTimer() {
         val timer = object : CountDownTimer(60000, 1000) {
-            override fun onTick(time: Long) {
+            override fun onTick(time : Long) {
                 binding.timer.text = "Sisa Waktu : ${time.toInt() / 1000} Detik"
             }
 
@@ -115,10 +112,11 @@ class KuisActivity : AppCompatActivity() {
                 binding.btnNext.callOnClick()
             }
         }
+        timer.cancel()
         timer.start()
     }
 
-    private fun toastScore(score: Int) {
+    private fun toastScore(score : Int) {
         if (score >= 80) {
             Toast.makeText(
                 this,

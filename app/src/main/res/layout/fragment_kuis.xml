@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/grey"
     android:orientation="vertical"
     tools:context=".presentation.view.KuisFragment">
 
     <Button
         android:id="@+id/btnKuis1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_home"
@@ -21,16 +18,16 @@
         android:paddingTop="5dp"
         android:paddingEnd="@dimen/_15sdp"
         android:paddingBottom="5dp"
-        android:text="@string/kuis_1"
         android:textAlignment="textStart"
         android:textColor="@color/black"
-        tools:ignore="RtlSymmetry" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry"
+        tools:text="Kuis 1" />
 
     <Button
         android:id="@+id/btnKuis2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_home"
@@ -39,16 +36,16 @@
         android:paddingTop="5dp"
         android:paddingEnd="@dimen/_15sdp"
         android:paddingBottom="5dp"
-        android:text="@string/kuis_2"
         android:textAlignment="textStart"
         android:textColor="@color/black"
-        tools:ignore="RtlSymmetry" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry"
+        tools:text="Kuis 2" />
 
     <Button
         android:id="@+id/btnKuis3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_home"
@@ -57,10 +54,13 @@
         android:paddingTop="5dp"
         android:paddingEnd="@dimen/_15sdp"
         android:paddingBottom="5dp"
-        android:text="@string/kuis_3"
         android:textAlignment="textStart"
         android:textColor="@color/black"
-        tools:ignore="RtlSymmetry" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry"
+        tools:text="Kuis 3" />
 
     <Button
         android:id="@+id/btnKuis4"
@@ -72,13 +72,13 @@
         android:paddingTop="5dp"
         android:paddingEnd="@dimen/_15sdp"
         android:paddingBottom="5dp"
-        android:text="@string/kuis_4"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry"
+        tools:text="Kuis 4" />
 
     <Button
         android:id="@+id/btnKuis5"
@@ -90,12 +90,12 @@
         android:paddingTop="5dp"
         android:paddingEnd="@dimen/_15sdp"
         android:paddingBottom="5dp"
-        android:text="@string/kuis_5"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry"
+        tools:text="Kuis 5" />
 
 </LinearLayout>

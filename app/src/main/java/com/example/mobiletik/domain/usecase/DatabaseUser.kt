@@ -1,15 +1,19 @@
-package com.example.mobiletik.model.usecase
+package com.example.mobiletik.domain.usecase
 
 import android.app.Activity
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import com.example.mobiletik.domain.usecase.Authentication.getUID
 import com.example.mobiletik.model.data.ScoreKuis
-import com.example.mobiletik.model.data.UserInfo
-import com.example.mobiletik.model.usecase.Authentication.getUID
-import com.example.mobiletik.utility.Loading
+import com.example.mobiletik.model.utility.Loading
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 object DatabaseUser {
     private val database = Firebase.database.getReference("User")
@@ -40,18 +44,15 @@ object DatabaseUser {
     }
 
     private fun setupUser(mActivity : Activity) {
-
         val loading = Loading(mActivity)
-        loading.startLoading()
-
         database.child(getUID()).get().addOnSuccessListener { snapshot ->
+            Log.d(TAG, "setupUser: Data berhasil didapatkan")
 
             //  Data Profile
             val nama = snapshot.child("Profile").child("nama").value.toString()
             val nis = snapshot.child("Profile").child("nis").value.toString()
             val email = snapshot.child("Profile").child("email").value.toString()
 
-            //  Data Kuis
             var kuis1 = snapshot.child("Score").child("KuisSatu").value.toString()
             if (kuis1 == "null") {
                 kuis1 = "-"
@@ -72,7 +73,8 @@ object DatabaseUser {
             if (kuis5 == "null") {
                 kuis5 = "-"
             }
-            val sharedPref = mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
+            val sharedPref =
+                mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
             with(sharedPref.edit()) {
 
                 //  Profil
@@ -93,6 +95,7 @@ object DatabaseUser {
         }.addOnFailureListener { error ->
             loading.dismissLoading()
             Toast.makeText(mActivity, error.message.toString(), Toast.LENGTH_SHORT).show()
+            Log.e(TAG, "setupUser: Data gagal didapatkan")
         }
     }
 
@@ -102,38 +105,33 @@ object DatabaseUser {
         Toast.makeText(mActivity, "Selamat Datang $userName", Toast.LENGTH_SHORT).show()
     }
 
-    fun userDataOffline(mActivity : Activity) : UserInfo {
-        val sharedPref = mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
-        val userName : String = sharedPref.getString("userName", "").toString()
-        val userNis : String = sharedPref.getString("userNis", "").toString()
-        val userEmail : String = sharedPref.getString("userEmail", "").toString()
-        return UserInfo(userName, userNis, userEmail)
-    }
-
     fun quizDataOffline(mActivity : Activity) : ScoreKuis {
         val sharedPref = mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
-        val kuis1 = sharedPref.getString("KuisSatu", "-")!!
-        val kuis2 = sharedPref.getString("KuisDua", "-")!!
-        val kuis3 = sharedPref.getString("KuisTiga", "-")!!
-        val kuis4 = sharedPref.getString("KuisEmpat", "-")!!
-        val kuis5 = sharedPref.getString("KuisLima", "-")!!
+        val kuis1 = sharedPref.getLong("kuisSatu", 0)
+        val kuis2 = sharedPref.getLong("kuisDua", 0)
+        val kuis3 = sharedPref.getLong("kuisTiga", 0)
+        val kuis4 = sharedPref.getLong("kuisEmpat", 0)
+        val kuis5 = sharedPref.getLong("kuisLima", 0)
         return ScoreKuis(kuis1, kuis2, kuis3, kuis4, kuis5)
     }
 
+    @DelicateCoroutinesApi
     fun uploadScore(mActivity : Activity, index : String, score : Int) {
         val loading = Loading(mActivity)
         loading.startLoading()
         mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE).edit()
             .putString(index, score.toString()).apply()
-        database.child(getUID()).child("Score").child(index)
-            .setValue(score.toString())
-            .addOnSuccessListener {
-                loading.dismissLoading()
-                mActivity.finish()
-            }.addOnFailureListener {
-                Log.e("Error", it.message.toString())
-                loading.dismissLoading()
-                mActivity.finish()
-            }
+        GlobalScope.launch(Dispatchers.IO) {
+            database.child(getUID()).child("Score").child(index)
+                .setValue(score.toString())
+                .addOnSuccessListener {
+                    Log.d(TAG, "uploadScore: Score berhasil diupload")
+                    mActivity.finish()
+                }.addOnFailureListener {
+                    Log.e("Error", it.message.toString())
+                }
+        }
+        loading.dismissLoading()
+        mActivity.finish()
     }
 }

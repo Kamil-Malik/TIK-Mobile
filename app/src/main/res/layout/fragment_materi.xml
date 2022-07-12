@@ -15,11 +15,11 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/btn_home"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/bab_1"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Bab 1" />
 
     <Button
         android:id="@+id/bab2"
@@ -28,11 +28,11 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/btn_home"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/bab2"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bab1" />
+        app:layout_constraintTop_toBottomOf="@+id/bab1"
+        tools:text="Bab 2" />
 
     <Button
         android:id="@+id/bab3"
@@ -41,11 +41,11 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/btn_home"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/bab3"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bab2" />
+        app:layout_constraintTop_toBottomOf="@+id/bab2"
+        tools:text="Bab 3" />
 
     <Button
         android:id="@+id/bab4"
@@ -54,11 +54,11 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/btn_home"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/bab4"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bab3" />
+        app:layout_constraintTop_toBottomOf="@+id/bab3"
+        tools:text="Bab 4" />
 
     <Button
         android:id="@+id/bab5"
@@ -67,10 +67,10 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/btn_home"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/bab5"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bab4" />
+        app:layout_constraintTop_toBottomOf="@+id/bab4"
+        tools:text="Bab 5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

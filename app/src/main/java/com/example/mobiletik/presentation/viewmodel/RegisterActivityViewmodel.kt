@@ -2,7 +2,7 @@ package com.example.mobiletik.presentation.viewmodel
 
 import android.util.Patterns
 import androidx.lifecycle.ViewModel
-import com.example.mobiletik.model.usecase.Authentication
+import com.example.mobiletik.domain.usecase.Authentication
 import com.example.mobiletik.model.data.UserInfo
 import com.example.mobiletik.presentation.view.RegisterActivity
 
@@ -40,8 +40,7 @@ class RegisterActivityViewmodel : ViewModel() {
             password.length >= 9
         ) {
             val userInfo = UserInfo(userName, userNis, email)
-            val auth = Authentication
-            auth.signUp(mActivity, email, password, userInfo)
+            Authentication.checkAlvailibility(mActivity, email, password, userInfo)
         }
     }
 

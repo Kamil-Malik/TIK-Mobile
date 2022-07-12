@@ -19,7 +19,21 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
 
         ViewModelProvider(this)[MainActivityViewmodel::class.java]
 
-        binding.btnLisensi.setOnClickListener { startActivity(Intent(context, LicenseActivity::class.java)) }
-        binding.btnProfil.setOnClickListener { startActivity(Intent(context, ProfileActivity::class.java)) }
+        binding.btnLisensi.setOnClickListener {
+            startActivity(
+                Intent(
+                    context,
+                    LicenseActivity::class.java
+                )
+            )
+        }
+        binding.btnProfil.setOnClickListener {
+            startActivity(
+                Intent(
+                    context,
+                    ProfileActivity::class.java
+                )
+            )
+        }
     }
 }

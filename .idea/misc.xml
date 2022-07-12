@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/TIK-Mobile/app/src/main/res/layout/activity_bab_pertama.xml" value="0.2717948717948718" />
+        <entry key="..\:/TIK-Mobile/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/TIK-Mobile/app/src/main/res/layout/activity_profile.xml" value="0.17074275362318841" />
+        <entry key="..\:/TIK-Mobile/app/src/main/res/menu/menu_bab1.xml" value="0.209375" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/drawable/btn_home.xml" value="0.1945" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/drawable/chat_masuk.xml" value="0.1945" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/activity_kuis.xml" value="0.33" />
@@ -19,8 +23,12 @@
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/license_adapter.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/btn.xml" value="0.1955" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/btn_home.xml" value="0.193" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/btnsend.xml" value="0.196" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/card.xml" value="0.193" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/chat_keluar.xml" value="0.198" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/chat_masuk.xml" value="0.198" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/form.xml" value="0.1955" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/form_chat.xml" value="0.197" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/roboto.xml" value="0.1" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/roboto_bold.xml" value="0.1" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/roboto_italic.xml" value="0.1" />
@@ -30,15 +38,18 @@
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/sen.xml" value="0.1" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/sen_bold.xml" value="0.1" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/sen_extrabold.xml" value="0.1" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_bab_pertama.xml" value="0.15604959384352288" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_kuis.xml" value="0.25" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_license.xml" value="0.33" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_login.xml" value="0.22026431718061673" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_login.xml" value="0.5" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_main.xml" value="0.3713123092573754" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_profil.xml" value="0.1526293287729799" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_profile.xml" value="0.22" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_profile.xml" value="0.33" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_reset_password.xml" value="0.33" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_chat.xml" value="0.1526293287729799" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_reset_password.xml" value="0.75" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/chat_adapter.xml" value="0.22" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_bab_pertama.xml" value="0.15604959384352288" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_chat.xml" value="0.333029197080292" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_kuis.xml" value="0.25" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_materi.xml" value="0.33" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_more.xml" value="0.2" />
@@ -54,5 +65,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

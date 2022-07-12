@@ -1,4 +1,4 @@
-package com.example.mobiletik.utility
+package com.example.mobiletik.model.utility
 
 import android.annotation.SuppressLint
 import android.app.Activity
