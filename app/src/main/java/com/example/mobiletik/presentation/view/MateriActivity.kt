@@ -27,14 +27,10 @@ class MateriActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             Log.d(TAG, "onCreate: ${namaFIle[indeks]}.pdf")
             binding.pdfView.fromAsset("${namaFIle[indeks]}.pdf")
-                .pageFitPolicy(FitPolicy.BOTH)
-                .autoSpacing(true)
                 .fitEachPage(true)
                 .pageSnap(true)
                 .load()
         }
-
-
 
         binding.fabBack.setOnClickListener {
             onBackPressed()

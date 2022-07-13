@@ -70,6 +70,10 @@
 
     <string-array name="namaFile">
         <item tools:ignore="Typos">bab1</item>
+        <item>bab2</item>
+        <item>bab3</item>
+        <item>bab4</item>
+        <item>bab5</item>
     </string-array>
 
     <string name="title_activity_bab_pertama">BabPertamaActivity</string>
