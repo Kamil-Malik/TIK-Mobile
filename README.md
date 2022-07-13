@@ -4,6 +4,9 @@ Repositori ini merupakan sebuah project pengembangan Aplikasi berbasis Android s
 
 Library yang digunakan dalam project ini :
 - AndroidX
+- Fragment
+- Constraint Layout
+- Firebase Analytic Performance
 - Firebase Crash Analytics
 - Firebase Authentication
 - Firebase Realtime Database
@@ -11,4 +14,6 @@ Library yang digunakan dalam project ini :
 - Viewmodel Lifecycle
 - Viewmodel Data
 - Coroutine
-
+- Coroutine Play Service
+- Barteks PDF Viewer
+- Scalable Density Pixel
