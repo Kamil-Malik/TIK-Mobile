@@ -1,4 +1,4 @@
-package com.example.mobiletik.model.utility
+package com.example.mobiletik.domain.utility
 
 import android.app.Application
 import com.google.firebase.database.ktx.database

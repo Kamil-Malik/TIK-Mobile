@@ -5,7 +5,7 @@ import android.content.ContentValues.TAG
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
-import com.example.mobiletik.model.utility.Loading
+import com.example.mobiletik.domain.utility.Loading
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.*

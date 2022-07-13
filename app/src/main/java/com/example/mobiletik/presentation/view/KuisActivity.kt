@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.mobiletik.databinding.ActivityKuisBinding
 import com.example.mobiletik.domain.usecase.Firestore.updateQuizScoreInFirestore
 import com.example.mobiletik.presentation.viewmodel.KuisActivityViewmodel
-import com.example.mobiletik.model.utility.Loading
+import com.example.mobiletik.domain.utility.Loading
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 

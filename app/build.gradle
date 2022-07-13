@@ -66,6 +66,7 @@ dependencies {
 
     implementation 'com.intuit.sdp:sdp-android:1.0.6' //Scalable Density Pixel
     implementation 'de.hdodenhof:circleimageview:3.1.0' //Circle ImageView
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1") //Coroutine

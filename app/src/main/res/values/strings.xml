@@ -68,6 +68,10 @@
         <item tools:ignore="TypographyDashes">https://62cd316a87c40b4982e995b2--unrivaled-concha-459c60.netlify.app/</item>
     </string-array>
 
+    <string-array name="namaFile">
+        <item tools:ignore="Typos">bab1</item>
+    </string-array>
+
     <string name="title_activity_bab_pertama">BabPertamaActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>

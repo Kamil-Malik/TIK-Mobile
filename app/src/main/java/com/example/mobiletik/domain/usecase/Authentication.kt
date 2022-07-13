@@ -10,7 +10,7 @@ import com.example.mobiletik.model.data.TemplateUser
 import com.example.mobiletik.model.data.UserInfo
 import com.example.mobiletik.presentation.view.LoginActivity
 import com.example.mobiletik.presentation.view.MainActivity
-import com.example.mobiletik.model.utility.Loading
+import com.example.mobiletik.domain.utility.Loading
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuthEmailException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException

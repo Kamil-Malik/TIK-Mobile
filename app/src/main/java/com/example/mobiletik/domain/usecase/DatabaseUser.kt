@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.mobiletik.domain.usecase.Authentication.getUID
 import com.example.mobiletik.model.data.ScoreKuis
-import com.example.mobiletik.model.utility.Loading
+import com.example.mobiletik.domain.utility.Loading
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.DelicateCoroutinesApi
