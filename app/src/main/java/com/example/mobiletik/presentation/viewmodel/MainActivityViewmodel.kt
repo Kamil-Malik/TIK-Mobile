@@ -3,11 +3,8 @@ package com.example.mobiletik.presentation.viewmodel
 import android.app.Activity
 import android.content.ContentValues.TAG
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
-import androidx.lifecycle.viewModelScope
-import com.example.mobiletik.domain.usecase.Firestore
+import com.example.mobiletik.domain.usecase.SaveDataFromFirestore.checkUser
 import com.example.mobiletik.model.data.Chat
 import com.example.mobiletik.presentation.adapter.ChatAdapter
 import com.google.firebase.database.DataSnapshot
@@ -15,16 +12,19 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+@OptIn(DelicateCoroutinesApi::class)
 class MainActivityViewmodel : ViewModel() {
 
     val chatData : MutableList<Chat> = mutableListOf()
     val adapter = ChatAdapter(chatData)
 
     init {
-        viewModelScope.launch(Dispatchers.Default) {
+        GlobalScope.launch(Dispatchers.Default) {
             Firebase.database.getReference("Chat").addValueEventListener(object :
                 ValueEventListener {
                 override fun onDataChange(snapshot : DataSnapshot) {
@@ -65,6 +65,6 @@ class MainActivityViewmodel : ViewModel() {
     }
 
     fun loadProfile(mActivity : Activity) {
-        Firestore.checkUser(mActivity)
+        checkUser(mActivity)
     }
 }

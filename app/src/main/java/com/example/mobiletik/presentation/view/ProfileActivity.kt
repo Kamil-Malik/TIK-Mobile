@@ -1,15 +1,12 @@
 package com.example.mobiletik.presentation.view
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.mobiletik.R
 import com.example.mobiletik.databinding.ActivityProfileBinding
 import com.example.mobiletik.domain.usecase.UserData.getUserDataFromSharedpref
-import com.google.firebase.firestore.core.ActivityScope
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -24,10 +21,16 @@ class ProfileActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         val data = getUserDataFromSharedpref(this)
-        val finalScore = (data.kuisSatu + data.kuisDua + data.kuisTiga + data.kuisEmpat + data.kuisLima) / 5
+        val finalScore =
+            (data.kuisSatu + data.kuisDua + data.kuisTiga + data.kuisEmpat + data.kuisLima) / 5
+        if (finalScore < 60) {
+            binding.tvHasilKuisFinal.setTextColor(R.color.red)
+        } else {
+            binding.tvHasilKuisFinal.setTextColor(R.color.dark_green)
+        }
         val textJudulNilai = resources.getStringArray(R.array.judulKuis)
-        lifecycleScope.launch(Dispatchers.Main){
-            with(binding){
+        lifecycleScope.launch(Dispatchers.Main) {
+            with(binding) {
                 tvNama.text = data.userName
                 tvNis.text = data.userNIS
                 tvEmail.text = data.userEmail
@@ -44,12 +47,9 @@ class ProfileActivity : AppCompatActivity() {
                 tvKuis5.text = textJudulNilai[4]
             }
         }
-        binding.fabBack.setOnClickListener{
+        binding.fabBack.setOnClickListener {
             onBackPressed()
+            finish()
         }
-    }
-
-    override fun onBackPressed() {
-        finish()
     }
 }

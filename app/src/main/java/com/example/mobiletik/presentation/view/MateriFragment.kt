@@ -25,20 +25,20 @@ class MateriFragment : Fragment(R.layout.fragment_materi) {
             bab5.text = textButton[4]
         }
 
-        binding.bab1.setOnClickListener{
-            startActivity(Intent(requireActivity(), MateriActivity::class.java).putExtra("bab",0))
+        binding.bab1.setOnClickListener {
+            startActivity(Intent(requireActivity(), MateriActivity::class.java).putExtra("bab", 0))
         }
-        binding.bab2.setOnClickListener{
-            startActivity(Intent(requireActivity(), MateriActivity::class.java).putExtra("bab",1))
+        binding.bab2.setOnClickListener {
+            startActivity(Intent(requireActivity(), MateriActivity::class.java).putExtra("bab", 1))
         }
-        binding.bab3.setOnClickListener{
-            startActivity(Intent(requireActivity(), MateriActivity::class.java).putExtra("bab",2))
+        binding.bab3.setOnClickListener {
+            startActivity(Intent(requireActivity(), MateriActivity::class.java).putExtra("bab", 2))
         }
-        binding.bab4.setOnClickListener{
-            startActivity(Intent(requireActivity(), MateriActivity::class.java).putExtra("bab",3))
+        binding.bab4.setOnClickListener {
+            startActivity(Intent(requireActivity(), MateriActivity::class.java).putExtra("bab", 3))
         }
-        binding.bab5.setOnClickListener{
-            startActivity(Intent(requireActivity(), MateriActivity::class.java).putExtra("bab",4))
+        binding.bab5.setOnClickListener {
+            startActivity(Intent(requireActivity(), MateriActivity::class.java).putExtra("bab", 4))
         }
     }
 }

@@ -20,7 +20,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -63,12 +63,12 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0' //Fragment
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.0-alpha01" //ViewModel
 
-
     implementation 'com.intuit.sdp:sdp-android:1.0.6' //Scalable Density Pixel
-    implementation 'de.hdodenhof:circleimageview:3.1.0' //Circle ImageView
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1") //Coroutine
     implementation("androidx.work:work-runtime-ktx:2.7.1") //Viewmodel Scope
+
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
 }

@@ -20,7 +20,7 @@
             android:name=".presentation.view.MateriActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".presentation.view.KuisActivity"
             android:exported="false"

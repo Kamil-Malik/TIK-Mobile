@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.mobiletik.R
 import com.example.mobiletik.databinding.FragmentMoreBinding
 import com.example.mobiletik.presentation.viewmodel.MainActivityViewmodel
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MoreFragment : Fragment(R.layout.fragment_more) {
 
@@ -34,6 +36,11 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                     ProfileActivity::class.java
                 )
             )
+        }
+        binding.btnLogout.setOnClickListener {
+            Firebase.auth.signOut()
+            startActivity(Intent(context, LoginActivity::class.java))
+            activity!!.finish()
         }
     }
 }

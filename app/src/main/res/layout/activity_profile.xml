@@ -132,7 +132,6 @@
                 tools:text="km8003296@gmail.com" />
 
             <TextView
-                android:textSize="@dimen/_12sdp"
                 android:id="@+id/tvHasil_Kuis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,13 +139,13 @@
                 android:fontFamily="@font/roboto_bold"
                 android:text="@string/hasil_kuis"
                 android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_email" />
 
 
             <TextView
-                android:textSize="@dimen/_15sdp"
                 android:id="@+id/tvE_Raport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -155,6 +154,7 @@
                 android:fontFamily="@font/roboto_bold"
                 android:text="@string/e_raport"
                 android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

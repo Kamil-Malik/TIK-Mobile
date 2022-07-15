@@ -22,6 +22,8 @@
         android:id="@+id/layoutMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:background="@color/grey"
         android:orientation="horizontal"
         android:paddingStart="@dimen/_10sdp"
@@ -39,7 +41,9 @@
             android:id="@+id/isiPesan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:layout_marginRight="16dp"
+            android:layout_marginBottom="4dp"
             android:background="@drawable/form_chat"
             android:hint="@string/isi_pesan"
             android:importantForAutofill="no"
@@ -58,16 +62,17 @@
 
         <ImageButton
             android:id="@+id/btnKirim"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/btnsend"
-            android:src="@drawable/send"
+            android:padding="10dp"
+            android:paddingStart="12dp"
+            android:src="@drawable/ic_send"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
             app:tint="@color/white"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription,RtlSymmetry" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

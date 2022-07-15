@@ -6,7 +6,6 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobiletik.R
 import com.example.mobiletik.databinding.ActivityMateriBinding
-import com.github.barteksc.pdfviewer.util.FitPolicy
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -27,7 +26,7 @@ class MateriActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             Log.d(TAG, "onCreate: ${namaFIle[indeks]}.pdf")
             binding.pdfView.fromAsset("${namaFIle[indeks]}.pdf")
-                .fitEachPage(true)
+                .swipeHorizontal(true)
                 .pageSnap(true)
                 .load()
         }

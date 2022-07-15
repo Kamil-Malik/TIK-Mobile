@@ -32,11 +32,6 @@ object UserData {
         }
     }
 
-    fun saveQuizResultIntoSharedPref(mActivity : Activity, index : String, score : Int) {
-        mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE).edit()
-            .putLong(index, score.toLong()).apply()
-    }
-
     fun getQuizResultFromSharedpref(mActivity : Activity) : ScoreKuis {
         val sharedPref = mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
         val kuis1 = sharedPref.getLong("kuisSatu", 0)
@@ -45,6 +40,5 @@ object UserData {
         val kuis4 = sharedPref.getLong("kuisEmpat", 0)
         val kuis5 = sharedPref.getLong("kuisLima", 0)
         return ScoreKuis(kuis1, kuis2, kuis3, kuis4, kuis5)
-
     }
 }

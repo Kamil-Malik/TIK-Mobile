@@ -16,36 +16,35 @@ import com.example.mobiletik.presentation.adapter.ChatAdapter
 import com.example.mobiletik.presentation.viewmodel.MainActivityViewmodel
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 
 
 class ChatFragment : Fragment(R.layout.fragment_chat) {
 
-    private lateinit var binding: FragmentChatBinding
-    private val sharedViewModel: MainActivityViewmodel by activityViewModels()
+    private lateinit var binding : FragmentChatBinding
+    private val sharedViewModel : MainActivityViewmodel by activityViewModels()
+    private lateinit var adapter : ChatAdapter
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentChatBinding.bind(view)
-        val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        val adapter = ChatAdapter(sharedViewModel.chatData)
-        lifecycleScope.launch {
-            withContext(Dispatchers.Main) {
-                async {
-                    binding.rvChat.layoutManager = layoutManager
-                    binding.rvChat.adapter = adapter
-                    binding.rvChat.scrollToPosition(adapter.itemCount - 1)
-                }.await()
-                binding.btnKirim.setOnClickListener {
-                    sendMessage(binding.rvChat, adapter)
-                }
-            }
+        adapter = sharedViewModel.adapter
+        lifecycleScope.launch(Dispatchers.Main){
+            binding.rvChat.layoutManager = LinearLayoutManager(activity)
+            binding.rvChat.adapter = adapter
+            binding.rvChat.scrollToPosition(adapter.itemCount - 1)
+        }
+        binding.btnKirim.setOnClickListener {
+            sendMessage(binding.rvChat, adapter)
         }
     }
 
-    private fun sendMessage(rvChat: RecyclerView, adapter: ChatAdapter) {
+    private fun sendMessage(rvChat : RecyclerView, adapter : ChatAdapter) {
         val activity = activity
         val sharedPref =
             activity!!.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
@@ -63,8 +62,8 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
             CoroutineScope(Dispatchers.IO).launch {
                 val database = Firebase.database.getReference("Chat")
                 database.push().setValue(message).await()
-                withContext(Dispatchers.Main){
-                    rvChat.scrollToPosition(adapter.itemCount-1)
+                withContext(Dispatchers.Main) {
+                    rvChat.scrollToPosition(adapter.itemCount - 1)
                 }
             }
         }

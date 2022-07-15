@@ -3,19 +3,19 @@
 
     <item
         android:id="@+id/materi"
-        android:icon="@drawable/materi"
+        android:icon="@drawable/ic_book"
         android:title="@string/materi" />
     <item
         android:id="@+id/diskusi"
-        android:icon="@drawable/message"
+        android:icon="@drawable/ic_discussion"
         android:title="@string/forum" />
     <item
         android:id="@+id/kuis"
-        android:icon="@drawable/kuis"
+        android:icon="@drawable/ic_quiz"
         android:title="@string/kuis" />
 
     <item
         android:id="@+id/more"
-        android:icon="@drawable/more"
+        android:icon="@drawable/ic_more"
         android:title="@string/selengkapnya" />
 </menu>

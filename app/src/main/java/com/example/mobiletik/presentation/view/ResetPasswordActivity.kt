@@ -2,10 +2,11 @@ package com.example.mobiletik.presentation.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import com.example.mobiletik.databinding.ActivityResetPasswordBinding
-import com.example.mobiletik.presentation.viewmodel.ResetPasswordActivityViewmodel
+import com.example.mobiletik.domain.usecase.ResetPassword
+import com.example.mobiletik.domain.usecase.ResetPasswordValidation.validate
 
 class ResetPasswordActivity : AppCompatActivity() {
 
@@ -15,16 +16,23 @@ class ResetPasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResetPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        with(binding) {
+            btnReset.setOnClickListener {
+                val email = userEmail.text.toString()
+                val validation = validate(email)
+                if (validation.result) {
+                    ResetPassword.sendResetPasswordLink(this@ResetPasswordActivity, email)
+                } else {
+                    Toast.makeText(this@ResetPasswordActivity, validation.errorMessage, Toast.LENGTH_SHORT).show()
+                }
+            }
 
-        val model = ViewModelProvider(this)[ResetPasswordActivityViewmodel::class.java]
-
-        binding.btnReset.setOnClickListener {
-            model.checkForm(this)
-        }
-
-        binding.daftar.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
-            finish()
+            daftar.setOnClickListener {
+                Intent(this@ResetPasswordActivity, RegisterActivity::class.java).also {
+                    startActivity(it)
+                    finish()
+                }
+            }
         }
     }
 }
