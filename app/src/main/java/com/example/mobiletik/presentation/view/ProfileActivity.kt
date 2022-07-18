@@ -1,7 +1,9 @@
 package com.example.mobiletik.presentation.view
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.mobiletik.R
@@ -29,11 +31,13 @@ class ProfileActivity : AppCompatActivity() {
             binding.tvHasilKuisFinal.setTextColor(R.color.dark_green)
         }
         val textJudulNilai = resources.getStringArray(R.array.judulKuis)
+        Log.d(TAG, "onCreate: $data")
         lifecycleScope.launch(Dispatchers.Main) {
             with(binding) {
                 tvNama.text = data.userName
                 tvNis.text = data.userNIS
                 tvEmail.text = data.userEmail
+                tvKelas.text = data.userKelas
                 tvHasilKuisSatu.text = data.kuisSatu.toString()
                 tvHasilKuisDua.text = data.kuisDua.toString()
                 tvHasilKuisTiga.text = data.kuisTiga.toString()

@@ -9,9 +9,9 @@ import com.example.mobiletik.domain.usecase.RegisterFormValidation.validate
 
 class RegisterActivity : AppCompatActivity() {
 
-    internal lateinit var binding : ActivityRegisterBinding
+    internal lateinit var binding: ActivityRegisterBinding
 
-    override fun onCreate(savedInstanceState : Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -21,12 +21,24 @@ class RegisterActivity : AppCompatActivity() {
                 val userName = userName.text.toString()
                 val userNIS = userNis.text.toString()
                 val email = userEmail.text.toString()
+                val kelas = userKelas.text.toString()
                 val password = userPassword.text.toString()
-                val validation = validate(userName, userNIS, email, password)
-                if(validation.result){
-                    Register.signUpWithEmailAndPassword(this@RegisterActivity, email, password, userName, userNIS)
+                val validation = validate(userName, userNIS, email, kelas, password)
+                if (validation.result) {
+                    Register.signUpWithEmailAndPassword(
+                        this@RegisterActivity,
+                        email,
+                        password,
+                        userName,
+                        userNIS,
+                        kelas
+                    )
                 } else {
-                    Toast.makeText(this@RegisterActivity, validation.errorMessage, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@RegisterActivity,
+                        validation.errorMessage,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
 

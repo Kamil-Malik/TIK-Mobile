@@ -29,6 +29,7 @@ object SaveIntoSharedpref {
                         putString("userName", document.data!!["userName"] as String)
                         putString("userEmail", document.data!!["userEmail"] as String)
                         putString("userNIS", document.data!!["userNIS"] as String)
+                        putString("userKelas", document.data!!["userKelas"] as String)
                         putLong("kuisSatu", document.data!!["kuisSatu"] as Long)
                         putLong("kuisDua", document.data!!["kuisDua"] as Long)
                         putLong("kuisTiga", document.data!!["kuisTiga"] as Long)

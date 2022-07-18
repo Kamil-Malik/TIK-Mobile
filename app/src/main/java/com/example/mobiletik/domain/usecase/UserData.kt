@@ -13,6 +13,7 @@ object UserData {
             val userName = getString("userName", "")!!
             val userNis = getString("userNIS", "")!!
             val userEmail = getString("userEmail", "")!!
+            val userKelas = getString("userKelas", "")!!
             val kuis1 = getLong("kuisSatu", 0)
             val kuis2 = getLong("kuisDua", 0)
             val kuis3 = getLong("kuisTiga", 0)
@@ -23,6 +24,7 @@ object UserData {
                 userName,
                 userNis,
                 userEmail,
+                userKelas,
                 kuis1,
                 kuis2,
                 kuis3,
@@ -30,15 +32,5 @@ object UserData {
                 kuis5
             )
         }
-    }
-
-    fun getQuizResultFromSharedpref(mActivity : Activity) : ScoreKuis {
-        val sharedPref = mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
-        val kuis1 = sharedPref.getLong("kuisSatu", 0)
-        val kuis2 = sharedPref.getLong("kuisDua", 0)
-        val kuis3 = sharedPref.getLong("kuisTiga", 0)
-        val kuis4 = sharedPref.getLong("kuisEmpat", 0)
-        val kuis5 = sharedPref.getLong("kuisLima", 0)
-        return ScoreKuis(kuis1, kuis2, kuis3, kuis4, kuis5)
     }
 }

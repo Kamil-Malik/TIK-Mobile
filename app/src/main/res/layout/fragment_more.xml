@@ -26,6 +26,24 @@
         tools:ignore="RtlSymmetry" />
 
     <Button
+        android:id="@+id/btn_export"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:drawableEnd="@drawable/ic_next"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingTop="5dp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:paddingBottom="5dp"
+        android:text="Export Nilai"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_profil"
+        tools:ignore="HardcodedText,RtlSymmetry" />
+
+    <Button
         android:id="@+id/btn_lisensi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_profil"
+        app:layout_constraintTop_toBottomOf="@+id/btn_export"
         tools:ignore="RtlSymmetry" />
 
     <Button

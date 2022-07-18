@@ -28,7 +28,8 @@ object Register {
         email : String,
         password : String,
         userName : String,
-        userNIS : String
+        userNIS : String,
+        userKelas : String
     ) {
         val loading = Loading(mActivity)
         loading.startLoading()
@@ -46,7 +47,7 @@ object Register {
         CoroutineScope(Dispatchers.IO + handler).launch {
             Firebase.auth.createUserWithEmailAndPassword(email,password).await()
             val uid = Authentication.getUID()
-            val userData = TemplateUser(uid, userName, userNIS, email)
+            val userData = TemplateUser(uid, userName, userNIS, email, userKelas)
             Firebase.firestore.collection("Users").document(uid).set(userData).await()
             withContext(Dispatchers.Main) {
                 loading.dismissLoading()
