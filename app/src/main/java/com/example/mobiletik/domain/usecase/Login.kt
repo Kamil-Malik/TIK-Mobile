@@ -19,15 +19,21 @@ object Login {
     private const val networkException = "Silahkan periksa koneksi dan coba lagi"
     private const val invalidCredentialsException = "Email atau Password yang anda masukkan salah"
 
-    fun login(mActivity : Activity, email : String, password : String) {
+    fun login(mActivity: Activity, email: String, password: String) {
         val loading = Loading(mActivity)
         val handler = CoroutineExceptionHandler { _, exception ->
             CoroutineScope(Dispatchers.Main).launch {
                 loading.dismissLoading()
                 when (exception) {
-                    is FirebaseAuthInvalidUserException -> toastError(mActivity,invalidUserException)
+                    is FirebaseAuthInvalidUserException -> toastError(
+                        mActivity,
+                        invalidUserException
+                    )
                     is FirebaseNetworkException -> toastError(mActivity, networkException)
-                    is FirebaseAuthInvalidCredentialsException -> toastError(mActivity,invalidCredentialsException)
+                    is FirebaseAuthInvalidCredentialsException -> toastError(
+                        mActivity,
+                        invalidCredentialsException
+                    )
                     else -> toastError(mActivity, exception.message.toString())
                 }
             }
@@ -36,6 +42,7 @@ object Login {
         CoroutineScope(Dispatchers.IO + handler).launch {
             Firebase.auth.signInWithEmailAndPassword(email, password).await()
             withContext(Dispatchers.Main) {
+                SaveIntoSharedpref.saveData(mActivity)
                 loading.dismissLoading()
                 Intent(mActivity, MainActivity::class.java).also {
                     mActivity.startActivity(it)
@@ -45,7 +52,7 @@ object Login {
         }
     }
 
-    private fun toastError(mActivity : Activity, error : String) {
+    private fun toastError(mActivity: Activity, error: String) {
         Toast.makeText(mActivity, error, Toast.LENGTH_SHORT).show()
     }
 }

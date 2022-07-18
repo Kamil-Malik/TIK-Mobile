@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.example.mobiletik.domain.usecase.SaveDataFromFirestore.checkUser
 import com.example.mobiletik.model.data.Chat
 import com.example.mobiletik.presentation.adapter.ChatAdapter
 import com.google.firebase.database.DataSnapshot
@@ -20,14 +19,14 @@ import kotlinx.coroutines.launch
 @OptIn(DelicateCoroutinesApi::class)
 class MainActivityViewmodel : ViewModel() {
 
-    val chatData : MutableList<Chat> = mutableListOf()
+    val chatData: MutableList<Chat> = mutableListOf()
     val adapter = ChatAdapter(chatData)
 
     init {
         GlobalScope.launch(Dispatchers.Default) {
             Firebase.database.getReference("Chat").addValueEventListener(object :
                 ValueEventListener {
-                override fun onDataChange(snapshot : DataSnapshot) {
+                override fun onDataChange(snapshot: DataSnapshot) {
                     Log.d(TAG, "onDataChange: Data berubah")
                     if (snapshot.exists()) {
                         if (chatData.isEmpty()) {
@@ -52,7 +51,7 @@ class MainActivityViewmodel : ViewModel() {
                     }
                 }
 
-                override fun onCancelled(error : DatabaseError) {
+                override fun onCancelled(error: DatabaseError) {
                     Log.e(TAG, "onCancelled: $error.message")
                 }
             })
@@ -62,9 +61,5 @@ class MainActivityViewmodel : ViewModel() {
     override fun onCleared() {
         chatData.clear()
         super.onCleared()
-    }
-
-    fun loadProfile(mActivity : Activity) {
-        checkUser(mActivity)
     }
 }

@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         val model = MainActivityViewmodel()
-        model.loadProfile(this)
 
         val materi = MateriFragment()
         val chat = ChatFragment()

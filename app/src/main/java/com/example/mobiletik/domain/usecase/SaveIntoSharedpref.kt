@@ -1,47 +1,22 @@
 package com.example.mobiletik.domain.usecase
 
 import android.app.Activity
-import android.content.ContentValues.TAG
+import android.content.ContentValues
 import android.content.Context
 import android.util.Log
-import android.widget.Toast
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.*
 import kotlinx.coroutines.tasks.await
 
-object SaveDataFromFirestore {
+object SaveIntoSharedpref {
 
-    fun checkUser(mActivity : Activity) {
-        if (checkProfile(mActivity)) {
-            greetUser(mActivity)
-        }
-        if (!checkProfile(mActivity)) {
-            saveData(mActivity)
-        }
-    }
-
-    private fun checkProfile(mActivity : Activity) : Boolean {
-        val sharedPref = mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
-        with(sharedPref) {
-            val userName = getString("userName", "")!!
-            val userNis = getString("userNIS", "")!!
-            val userEmail = getString("userEmail", "")!!
-            if (userName.isEmpty()) {
-                return false
-            } else if (userNis.isEmpty()) {
-                return false
-            } else if (userEmail.isEmpty()) {
-                return false
-            }
-            return true
-        }
-    }
-
-    fun saveData(mActivity : Activity) {
+    suspend fun saveData(mActivity: Activity) {
         val handler = CoroutineExceptionHandler { _, exception ->
-            Log.e(TAG, "saveData: $exception")
-            saveData(mActivity)
+            CoroutineScope(Dispatchers.Main).launch {
+                Log.e(ContentValues.TAG, "saveData: $exception")
+                saveData(mActivity)
+            }
         }
         CoroutineScope(Dispatchers.IO + handler).launch {
             val document = Firebase.firestore.collection("Users").document(Authentication.getUID())
@@ -59,17 +34,16 @@ object SaveDataFromFirestore {
                         putLong("kuisTiga", document.data!!["kuisTiga"] as Long)
                         putLong("kuisEmpat", document.data!!["kuisEmpat"] as Long)
                         putLong("kuisLima", document.data!!["kuisLima"] as Long)
+                        putLong("kuisSatuAttempt", document.data!!["kuisSatuAttempt"] as Long)
+                        putLong("kuisDuaAttempt", document.data!!["kuisDuaAttempt"] as Long)
+                        putLong("kuisTigaAttempt", document.data!!["kuisTigaAttempt"] as Long)
+                        putLong("kuisEmpatAttempt", document.data!!["kuisEmpatAttempt"] as Long)
+                        putLong("kuisLimaAttempt", document.data!!["kuisLimaAttempt"] as Long)
                         apply()
                     }
-                    greetUser(mActivity)
+                    GreetUser.greetUser(mActivity)
                 } else return@withContext
             }
         }
-    }
-    
-    fun greetUser(mActivity : Activity){
-        val userName = mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
-            .getString("userName", "")!!
-        Toast.makeText(mActivity, "Selamat Datang $userName", Toast.LENGTH_SHORT).show()
     }
 }

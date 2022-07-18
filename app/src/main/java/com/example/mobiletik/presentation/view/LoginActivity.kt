@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobiletik.databinding.ActivityLoginBinding
-import com.example.mobiletik.domain.usecase.Authentication.checkUser
+import com.example.mobiletik.domain.usecase.CheckUser.checkLogin
 import com.example.mobiletik.domain.usecase.Login.login
 import com.example.mobiletik.domain.usecase.LoginFormValidation.validate
 
@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        checkUser(this)
+        checkLogin(this)
         with(binding) {
             btnLogin.setOnClickListener {
                 val email = binding.userEmail.text.toString()

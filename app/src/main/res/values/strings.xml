@@ -42,8 +42,19 @@
     <string name="kirim">Kirim</string>
     <string name="selanjutnya">Selanjutnya</string>
 
+
+    <array name="fragment_kuis">
+        <item>Anda telah mengerjakan Kuis ini</item>
+        <item>Selamat mengerjakan Remedial</item>
+        <item>Selamat mengerjakan Kuis ini</item>
+    </array>
     <string name="kuisTelahDikerjakan">Anda telah mengerjakan Kuis ini</string>
     <string name="selamatMengerjakan">Selamat mengerjakan kuis ini</string>
+
+
+
+
+
     <string name="backbtn">backBtn</string>
     <string name="final_txt">Final</string>
 

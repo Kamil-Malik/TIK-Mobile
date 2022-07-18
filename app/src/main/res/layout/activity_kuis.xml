@@ -131,28 +131,39 @@
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btn"
         android:padding="10dp"
-        android:text="@string/selanjutnya"
+        android:text="Periksa Jawaban"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jawabanUser" />
+        app:layout_constraintTop_toBottomOf="@+id/jawabanUser"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/timer"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="196dp"
+        android:layout_marginTop="80dp"
+        android:text="Penjelasan"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/btnNext"
-        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jawabanUser"
-        tools:text="Sisa Waktu : 60 Detik" />
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tvPenjelasan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:justificationMode="inter_word"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:text="Perangkat hardware tanpa software akan menjadi sebuah mesin yang tidak memiliki fungsi karena tidak ada yang memberikan perintah kepada hardware untuk melakukan fungsi tertentu." />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
