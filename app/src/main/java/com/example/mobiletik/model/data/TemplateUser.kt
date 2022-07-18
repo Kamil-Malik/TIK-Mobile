@@ -9,5 +9,10 @@ data class TemplateUser(
     val kuisDua : Long = 0,
     val kuisTiga : Long = 0,
     val kuisEmpat : Long = 0,
-    val kuisLima : Long = 0
+    val kuisLima : Long = 0,
+    val kuisSatuAttempt : Long = 0,
+    val kuisDuaAttempt : Long = 0,
+    val kuisTigaAttempt : Long = 0,
+    val kuisEmpatAttempt : Long = 0,
+    val kuisLimaAttempt : Long = 0
 )
