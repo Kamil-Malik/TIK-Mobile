@@ -173,6 +173,7 @@ class KuisActivity : AppCompatActivity() {
         //Update Pref
         var currentScore =
             getSharedPreferences("userProfile", Context.MODE_PRIVATE).getLong(newIndex, 0)
+
         Log.d(TAG, "uploadScoreAndUpdatePref: $currentScore")
         with(sharedPreferences.edit()) {
             putLong(newIndex, newScore)
@@ -181,6 +182,12 @@ class KuisActivity : AppCompatActivity() {
         currentScore =
             getSharedPreferences("userProfile", Context.MODE_PRIVATE).getLong(newIndex, 0)
         Log.d(TAG, "uploadScoreAndUpdatePref: $currentScore")
+
+        Log.d(TAG, "updateAttemptIntoFirestore: Jumlah percobaan $currentAttempt")
+
+        UpdateAttemptIntoFirestore.updateAttemptIntoFirestore(quizTitle, currentAttempt)
+    }
+
 
         //Upload Score
         lifecycleScope.launch(Dispatchers.IO) {
