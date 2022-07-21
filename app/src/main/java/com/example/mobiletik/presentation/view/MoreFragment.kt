@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.mobiletik.R
 import com.example.mobiletik.databinding.FragmentMoreBinding
 import com.example.mobiletik.domain.usecase.ExportCSV.exportCSV
-import com.example.mobiletik.domain.usecase.Logout.Logout
+import com.example.mobiletik.domain.usecase.Logout.logout
 import com.example.mobiletik.domain.usecase.UserData.getUserDataFromSharedpref
 
 class MoreFragment : Fragment(R.layout.fragment_more) {
@@ -46,7 +46,7 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
 
         binding.btnLogout.setOnClickListener { //Btn Logout
             Log.d(TAG, "onViewCreated: Tombol Logout ditekan")
-            Logout(requireActivity())
+            logout(requireActivity())
         }
 
         binding.btnExport.setOnClickListener {

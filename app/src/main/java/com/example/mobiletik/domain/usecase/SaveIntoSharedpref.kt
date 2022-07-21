@@ -5,7 +5,6 @@ import android.content.ContentValues.TAG
 import android.content.Context
 import android.util.Log
 import com.example.mobiletik.domain.usecase.GetUID.getUID
-import com.example.mobiletik.model.data.TemplateUser
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.*

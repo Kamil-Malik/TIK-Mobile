@@ -1,5 +1,8 @@
 package com.example.mobiletik.model.data
 
+import androidx.annotation.Keep
+
+@Keep
 data class TemplateUser(
     val uid: String,
     val userName: String,

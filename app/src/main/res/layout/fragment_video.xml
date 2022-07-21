@@ -13,5 +13,5 @@
         app:fontSize="12sp"
         app:color="@color/dark_green"
         app:enableAutomaticInitialization="false"
-        app:autoPlay="false"/>
+        app:autoPlay="false" />
 </FrameLayout>
