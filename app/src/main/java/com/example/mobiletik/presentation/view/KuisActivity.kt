@@ -157,7 +157,7 @@ class KuisActivity : AppCompatActivity() {
         val currentAttempt =
             getSharedPreferences("userProfile", Context.MODE_PRIVATE).getLong(newIndex, 0)
         Log.d(TAG, "updateAttemptIntoFirestore: Jumlah percobaan $currentAttempt")
-        
+
         UpdateAttemptIntoFirestore.updateAttemptIntoFirestore(quizTitle, currentAttempt)
     }
 
