@@ -11,8 +11,8 @@
         android:id="@+id/btn_profil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_home"
-        android:drawableEnd="@drawable/next"
+        android:background="@color/yellow"
+        android:drawableEnd="@drawable/ic_next"
         android:paddingStart="@dimen/_15sdp"
         android:paddingTop="5dp"
         android:paddingEnd="@dimen/_15sdp"
@@ -26,11 +26,29 @@
         tools:ignore="RtlSymmetry" />
 
     <Button
+        android:id="@+id/btnExport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:drawableEnd="@drawable/ic_next"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingTop="5dp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:paddingBottom="5dp"
+        android:text="Export"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_profil"
+        tools:ignore="HardcodedText,RtlSymmetry" />
+
+    <Button
         android:id="@+id/btn_lisensi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_home"
-        android:drawableEnd="@drawable/next"
+        android:drawableEnd="@drawable/ic_next"
         android:paddingStart="@dimen/_15sdp"
         android:paddingTop="5dp"
         android:paddingEnd="@dimen/_15sdp"
@@ -41,7 +59,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_profil"
+        app:layout_constraintTop_toBottomOf="@+id/btnExport"
         tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_home"
+        android:drawableEnd="@drawable/ic_exit"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingTop="5dp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:paddingBottom="5dp"
+        android:text="@string/logout"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_lisensi" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

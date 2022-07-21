@@ -5,8 +5,8 @@ import android.app.Activity
 import android.app.AlertDialog
 import com.example.mobiletik.R
 
-class Loading(val mActivity : Activity) {
-    private lateinit var isdialog : AlertDialog
+class Loading(val mActivity: Activity) {
+    private lateinit var isdialog: AlertDialog
 
     @SuppressLint("InflateParams")
     fun startLoading() {

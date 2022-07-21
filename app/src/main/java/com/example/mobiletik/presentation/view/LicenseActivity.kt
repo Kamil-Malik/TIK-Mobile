@@ -3,17 +3,21 @@ package com.example.mobiletik.presentation.view
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobiletik.databinding.ActivityLicenseBinding
 import com.example.mobiletik.model.data.LicenseData
 import com.example.mobiletik.presentation.adapter.LicenseAdapter
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class LicenseActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityLicenseBinding
+    private lateinit var binding: ActivityLicenseBinding
 
     @SuppressLint("ResourceAsColor")
-    override fun onCreate(savedInstanceState : Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLicenseBinding.inflate(layoutInflater)
         val view = binding.root
@@ -57,10 +61,18 @@ class LicenseActivity : AppCompatActivity() {
                 "Copyright (c) 2013 - 2015 Intuit Inc."
             )
         )
+        lifecycleScope.launch {
+            withContext(Dispatchers.Main) {
+                val adapter = LicenseAdapter(licenseLIst)
+                binding.rvLicense.adapter = adapter
+                binding.rvLicense.layoutManager = LinearLayoutManager(this@LicenseActivity)
+            }
+        }
 
-        val adapter = LicenseAdapter(licenseLIst)
-        binding.rvLicense.adapter = adapter
-        binding.rvLicense.layoutManager = LinearLayoutManager(this)
+        binding.fabBack.setOnClickListener {
+            onBackPressed()
+            finish()
+        }
     }
 
     override fun onDestroy() {

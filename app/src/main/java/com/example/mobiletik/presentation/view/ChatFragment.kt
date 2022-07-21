@@ -10,38 +10,37 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobiletik.R
 import com.example.mobiletik.databinding.FragmentChatBinding
-import com.example.mobiletik.domain.usecase.Authentication
+import com.example.mobiletik.domain.usecase.GetUID
 import com.example.mobiletik.model.data.Chat
 import com.example.mobiletik.presentation.adapter.ChatAdapter
 import com.example.mobiletik.presentation.viewmodel.MainActivityViewmodel
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 
 
 class ChatFragment : Fragment(R.layout.fragment_chat) {
 
     private lateinit var binding: FragmentChatBinding
     private val sharedViewModel: MainActivityViewmodel by activityViewModels()
+    private lateinit var adapter: ChatAdapter
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentChatBinding.bind(view)
-        val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        val adapter = ChatAdapter(sharedViewModel.chatData)
-        lifecycleScope.launch {
-            withContext(Dispatchers.Main) {
-                async {
-                    binding.rvChat.layoutManager = layoutManager
-                    binding.rvChat.adapter = adapter
-                    binding.rvChat.scrollToPosition(adapter.itemCount - 1)
-                }.await()
-                binding.btnKirim.setOnClickListener {
-                    sendMessage(binding.rvChat, adapter)
-                }
-            }
+        adapter = sharedViewModel.adapter
+        lifecycleScope.launch(Dispatchers.Main) {
+            binding.rvChat.layoutManager = LinearLayoutManager(activity)
+            binding.rvChat.adapter = adapter
+            binding.rvChat.scrollToPosition(adapter.itemCount - 1)
+        }
+        binding.btnKirim.setOnClickListener {
+            sendMessage(binding.rvChat, adapter)
         }
     }
 
@@ -54,7 +53,7 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
         val message = Chat(
             message = pesan,
             senderName = nama!!,
-            senderUID = Authentication.getUID()
+            senderUID = GetUID.getUID()
         )
         binding.isiPesan.text.clear()
         if (pesan.isEmpty()) {
@@ -63,8 +62,8 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
             CoroutineScope(Dispatchers.IO).launch {
                 val database = Firebase.database.getReference("Chat")
                 database.push().setValue(message).await()
-                withContext(Dispatchers.Main){
-                    rvChat.scrollToPosition(adapter.itemCount-1)
+                withContext(Dispatchers.Main) {
+                    rvChat.scrollToPosition(adapter.itemCount - 1)
                 }
             }
         }

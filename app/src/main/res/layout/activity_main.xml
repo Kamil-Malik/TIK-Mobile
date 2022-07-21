@@ -19,7 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/logo_icon"
-        app:menu="@menu/toolbar"
         app:subtitle="@string/sma_alfalah"
         app:title="Aplikasi Pembelajaran TIK"
         app:titleMarginStart="25dp" />

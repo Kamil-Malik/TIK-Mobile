@@ -8,6 +8,7 @@ buildscript {
         //noinspection AndroidGradlePluginVersion
         classpath 'com.android.tools.build:gradle:3.4.0'
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.1'
+        classpath 'com.google.firebase:firebase-appdistribution-gradle:3.0.2'
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {

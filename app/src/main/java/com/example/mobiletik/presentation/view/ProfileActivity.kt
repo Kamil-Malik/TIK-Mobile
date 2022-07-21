@@ -1,36 +1,43 @@
 package com.example.mobiletik.presentation.view
 
 import android.annotation.SuppressLint
-import android.content.Context
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.mobiletik.R
 import com.example.mobiletik.databinding.ActivityProfileBinding
 import com.example.mobiletik.domain.usecase.UserData.getUserDataFromSharedpref
-import com.google.firebase.firestore.core.ActivityScope
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ProfileActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityProfileBinding
+    private lateinit var binding: ActivityProfileBinding
 
     @SuppressLint("SetTextI18n")
-    override fun onCreate(savedInstanceState : Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         val data = getUserDataFromSharedpref(this)
-        val finalScore = (data.kuisSatu + data.kuisDua + data.kuisTiga + data.kuisEmpat + data.kuisLima) / 5
+        val finalScore =
+            (data.kuisSatu + data.kuisDua + data.kuisTiga + data.kuisEmpat + data.kuisLima) / 5
+        if (finalScore < 60) {
+            binding.tvHasilKuisFinal.setTextColor(R.color.red)
+        } else {
+            binding.tvHasilKuisFinal.setTextColor(R.color.dark_green)
+        }
         val textJudulNilai = resources.getStringArray(R.array.judulKuis)
-        lifecycleScope.launch(Dispatchers.Main){
-            with(binding){
+        Log.d(TAG, "onCreate: $data")
+        lifecycleScope.launch(Dispatchers.Main) {
+            with(binding) {
                 tvNama.text = data.userName
                 tvNis.text = data.userNIS
                 tvEmail.text = data.userEmail
+                tvKelas.text = data.userKelas
                 tvHasilKuisSatu.text = data.kuisSatu.toString()
                 tvHasilKuisDua.text = data.kuisDua.toString()
                 tvHasilKuisTiga.text = data.kuisTiga.toString()
@@ -44,12 +51,9 @@ class ProfileActivity : AppCompatActivity() {
                 tvKuis5.text = textJudulNilai[4]
             }
         }
-        binding.fabBack.setOnClickListener{
+        binding.fabBack.setOnClickListener {
             onBackPressed()
+            finish()
         }
-    }
-
-    override fun onBackPressed() {
-        finish()
     }
 }

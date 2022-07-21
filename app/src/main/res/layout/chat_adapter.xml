@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_medium"
             android:textColor="@color/black"
-            android:textSize="@dimen/_10sdp"
+            android:textSize="@dimen/_12sdp"
             tools:text="Insannur Kamil Malik" />
 
         <TextView
@@ -37,7 +37,7 @@
             android:justificationMode="inter_word"
             android:maxWidth="@dimen/_125sdp"
             android:textColor="@color/white"
-            android:textSize="@dimen/_10sdp"
+            android:textSize="@dimen/_12sdp"
             tools:text="@string/lorem_long" />
     </LinearLayout>
 
@@ -49,7 +49,7 @@
         android:background="@drawable/chat_keluar"
         android:justificationMode="inter_word"
         android:maxWidth="@dimen/_125sdp"
-        android:textSize="@dimen/_10sdp"
+        android:textSize="@dimen/_12sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/chatMasuk"
         tools:text="@string/lorem_long" />

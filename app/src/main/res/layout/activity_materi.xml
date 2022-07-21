@@ -15,26 +15,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.github.barteksc.pdfviewer.PDFView
-        android:id="@+id/pdfView"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btmNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabBack"
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="32dp"
-        android:contentDescription="@string/backbtn"
-        android:src="@drawable/icon_return"
-        app:backgroundTint="@color/white"
-        app:fabSize="normal"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btmNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_green"
+        app:itemIconTint="@color/white"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_materi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
