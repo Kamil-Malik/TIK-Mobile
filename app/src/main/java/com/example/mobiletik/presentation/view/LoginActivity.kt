@@ -2,11 +2,14 @@ package com.example.mobiletik.presentation.view
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModel
 import com.example.mobiletik.databinding.ActivityLoginBinding
 import com.example.mobiletik.domain.usecase.CheckUser.checkLogin
 import com.example.mobiletik.domain.usecase.Login.login
 import com.example.mobiletik.domain.usecase.LoginFormValidation.validate
+import com.example.mobiletik.presentation.viewmodel.LoginActivityViewmodel
 
 class LoginActivity : AppCompatActivity() {
 
@@ -16,8 +19,12 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val model : LoginActivityViewmodel by viewModels()
+
+
         checkLogin(this)
         with(binding) {
+
             btnLogin.setOnClickListener {
                 val email = binding.userEmail.text.toString()
                 val pass = binding.userPassword.text.toString()

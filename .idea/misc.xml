@@ -4,12 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/TIK-Mobile/app/src/main/res/layout/activity_bab_pertama.xml" value="0.2717948717948718" />
+        <entry key="..\:/TIK-Mobile/app/src/main/res/layout/activity_kuis.xml" value="0.17074275362318841" />
         <entry key="..\:/TIK-Mobile/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/TIK-Mobile/app/src/main/res/layout/activity_profile.xml" value="0.17074275362318841" />
         <entry key="..\:/TIK-Mobile/app/src/main/res/menu/menu_bab1.xml" value="0.209375" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/drawable/btn_home.xml" value="0.1945" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/drawable/chat_masuk.xml" value="0.1945" />
-        <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/activity_kuis.xml" value="0.26625386996904027" />
+        <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/activity_kuis.xml" value="0.33" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Lab Unama/AndroidStudioProjects/TIK-Mobile/app/src/main/res/layout/activity_profile.xml" value="0.33" />
@@ -29,6 +30,9 @@
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/chat_masuk.xml" value="0.198" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/form.xml" value="0.1955" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/form_chat.xml" value="0.197" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/ic_email.xml" value="0.198" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/ic_info.xml" value="0.198" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/drawable/ic_lock.xml" value="0.198" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/roboto.xml" value="0.1" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/roboto_bold.xml" value="0.1" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/roboto_italic.xml" value="0.1" />
@@ -39,31 +43,24 @@
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/sen_bold.xml" value="0.1" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/font/sen_extrabold.xml" value="0.1" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_bab_pertama.xml" value="0.15604959384352288" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_daftar_siswa.xml" value="0.33" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_edit_question.xml" value="0.67" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_edit_soal.xml" value="0.33" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_kuis.xml" value="0.33" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_license.xml" value="0.33" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_main.xml" value="0.3713123092573754" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_materi.xml" value="0.1" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_kuis.xml" value="0.25" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_license.xml" value="0.25" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_profil.xml" value="0.1526293287729799" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_profile.xml" value="0.33" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_reset_password.xml" value="0.75" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/adapter_siswa.xml" value="0.4654696132596685" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/activity_reset_password.xml" value="0.22" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/chat_adapter.xml" value="0.22" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_bab_pertama.xml" value="0.15604959384352288" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_chat.xml" value="0.333029197080292" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_chat.xml" value="0.33" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_kuis.xml" value="0.25" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_materi.xml" value="0.33" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_more.xml" value="0.25" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_pdf.xml" value="0.16228070175438597" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_video.xml" value="0.16228070175438597" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_more.xml" value="0.22" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/fragment_selector.xml" value="0.2" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/layer_loading.xml" value="0.203125" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/license_adapter.xml" value="0.75" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/layout/spinner_adapter.xml" value="0.33" />
-        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/menu/menu_materi.xml" value="0.25" />
+        <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/menu/menu_materi.xml" value="0.1600877192982456" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/menu/nav_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/kamil/Documents/Kotlin/Mobile_TIK/app/src/main/res/menu/toolbar.xml" value="0.33" />
       </map>

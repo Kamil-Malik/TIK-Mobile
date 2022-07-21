@@ -9,11 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.example.mobiletik.databinding.ActivityKuisBinding
+import com.example.mobiletik.domain.usecase.GetUID.getUID
 import com.example.mobiletik.domain.usecase.ToastFunction
 import com.example.mobiletik.domain.usecase.UpdateAttemptIntoFirestore
-import com.example.mobiletik.domain.usecase.UploadScore.uploadQuizScoreIntoFirestore
 import com.example.mobiletik.domain.utility.Loading
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.*
 import kotlinx.coroutines.tasks.await
@@ -136,38 +137,60 @@ class KuisActivity : AppCompatActivity() {
                 }
 
             } else if (binding.btnNext.text == "Selanjutnya") {
-                binding. tvPenjelasan.isVisible = false
+                binding.tvPenjelasan.isVisible = false
                 binding.tvPenjelasan.text = ""
                 binding.btnNext.text = "Periksa Jawaban"
                 getQuestion(quizTitle, indexQuestion)
             } else if (binding.btnNext.text == "Selesai") {
                 toastScore(score)
-                updateScoreInSharedPreferences(quizTitle, score)
-                updateAttemptIntoSharedPref(quizTitle)
-                uploadQuizScoreIntoFirestore(quizTitle, score)
-                updateAttemptIntoFirestore(quizTitle)
+                uploadScoreAndUpdatePref(quizTitle, score)
             }
         }
     }
 
-    private fun updateAttemptIntoFirestore(quizTitle: String) {
-        val newIndex = quizTitle[0].lowercase() + quizTitle.removeRange(0, 1) + "Attempt"
-        Log.d(TAG, "updateAttemptIntoFirestore: $newIndex")
+    private fun uploadScoreAndUpdatePref(quizTitle: String, score: Int) {
+        val sharedPreferences = getSharedPreferences("userProfile", Context.MODE_PRIVATE)
+        val newIndex = quizTitle[0].lowercase() + quizTitle.removeRange(0, 1)
+        val newIndexAttempt = quizTitle[0].lowercase() + quizTitle.removeRange(0, 1) + "Attempt"
+        val newScore = score.toLong()
 
-        val currentAttempt =
+        //Start Loading
+        val loading = Loading(this)
+        loading.startLoading()
+
+        //Update Attempt
+        var currentAttempt =
+            getSharedPreferences("userProfile", Context.MODE_PRIVATE).getLong(newIndexAttempt, 0)
+        Log.d(TAG, "uploadScoreAndUpdatePref: $currentAttempt")
+        with(sharedPreferences.edit()) {
+            putLong(newIndexAttempt, currentAttempt + 1)
+            apply()
+        }
+        currentAttempt =
+            getSharedPreferences("userProfile", Context.MODE_PRIVATE).getLong(newIndexAttempt, 0)
+        Log.d(TAG, "uploadScoreAndUpdatePref: $currentAttempt")
+
+        //Update Pref
+        var currentScore =
             getSharedPreferences("userProfile", Context.MODE_PRIVATE).getLong(newIndex, 0)
-        Log.d(TAG, "updateAttemptIntoFirestore: Jumlah percobaan $currentAttempt")
-        
-        UpdateAttemptIntoFirestore.updateAttemptIntoFirestore(quizTitle, currentAttempt)
-    }
+        Log.d(TAG, "uploadScoreAndUpdatePref: $currentScore")
+        with(sharedPreferences.edit()) {
+            putLong(newIndex, newScore)
+            apply()
+        }
+        currentScore =
+            getSharedPreferences("userProfile", Context.MODE_PRIVATE).getLong(newIndex, 0)
+        Log.d(TAG, "uploadScoreAndUpdatePref: $currentScore")
 
-    private fun updateAttemptIntoSharedPref(quizTitle: String) {
-        val sharedPref = getSharedPreferences("userProfile", Context.MODE_PRIVATE)
-        val newIndex = quizTitle[0].lowercase() + quizTitle.removeRange(0, 1) + "Attempt"
-        Log.d(TAG, "updateAttemptIntoSharedPref: Index baru $newIndex")
+        //Upload Score
+        lifecycleScope.launch(Dispatchers.IO) {
+            Firebase.firestore.collection("Users").document(getUID()).update(newIndex, newScore)
+                .await()
+        }
 
-        val attempt = sharedPref.getLong(newIndex, 0)
-        sharedPref.edit().putLong(newIndex, attempt + 1).apply()
+        //Stop Loading
+        loading.dismissLoading()
+        finish()
     }
 
     @DelicateCoroutinesApi
@@ -195,13 +218,6 @@ class KuisActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    private fun updateScoreInSharedPreferences(quizTitle: String, score: Int) {
-        val newIndex = quizTitle[0].lowercase() + quizTitle.removeRange(0, 1)
-        getSharedPreferences("userProfile", Context.MODE_PRIVATE).edit()
-            .putLong(newIndex, score.toLong()).apply()
-        finish()
     }
 
     @DelicateCoroutinesApi

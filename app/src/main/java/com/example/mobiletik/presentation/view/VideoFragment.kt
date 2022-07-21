@@ -23,7 +23,7 @@ class VideoFragment : Fragment(R.layout.fragment_video) {
         lifecycle.addObserver(binding.ytPlayer)
         val loading = Loading(requireActivity())
         loading.startLoading()
-        val listener : YouTubePlayerListener = object : AbstractYouTubePlayerListener() {
+        val listener: YouTubePlayerListener = object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 val videoid = arguments!!.getString("res")
                 if (!videoid.isNullOrEmpty()) {

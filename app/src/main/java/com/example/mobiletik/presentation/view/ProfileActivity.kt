@@ -2,13 +2,16 @@ package com.example.mobiletik.presentation.view
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.mobiletik.R
 import com.example.mobiletik.databinding.ActivityProfileBinding
-import com.example.mobiletik.domain.usecase.UserData.getUserDataFromSharedpref
+import com.example.mobiletik.domain.usecase.GetQuizResultFromSharedPref
+import com.example.mobiletik.domain.usecase.GetUID.getUID
+import com.example.mobiletik.model.data.userData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -21,28 +24,29 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         val view = binding.root
+        val getUser = getUser()
+        val quizResult = GetQuizResultFromSharedPref.quizResult(this)
         setContentView(view)
-        val data = getUserDataFromSharedpref(this)
         val finalScore =
-            (data.kuisSatu + data.kuisDua + data.kuisTiga + data.kuisEmpat + data.kuisLima) / 5
+            (quizResult.KuisSatu + quizResult.KuisDua + quizResult.KuisTiga + quizResult.KuisEmpat + quizResult.KuisLima) / 5
         if (finalScore < 60) {
             binding.tvHasilKuisFinal.setTextColor(R.color.red)
         } else {
             binding.tvHasilKuisFinal.setTextColor(R.color.dark_green)
         }
         val textJudulNilai = resources.getStringArray(R.array.judulKuis)
-        Log.d(TAG, "onCreate: $data")
+        Log.d(TAG, "onCreate: $getUser")
         lifecycleScope.launch(Dispatchers.Main) {
             with(binding) {
-                tvNama.text = data.userName
-                tvNis.text = data.userNIS
-                tvEmail.text = data.userEmail
-                tvKelas.text = data.userKelas
-                tvHasilKuisSatu.text = data.kuisSatu.toString()
-                tvHasilKuisDua.text = data.kuisDua.toString()
-                tvHasilKuisTiga.text = data.kuisTiga.toString()
-                tvHasilKuisEmpat.text = data.kuisEmpat.toString()
-                tvHasilKuisLima.text = data.kuisLima.toString()
+                tvNama.text = getUser.userName
+                tvNis.text = getUser.userNIS
+                tvEmail.text = getUser.userEmail
+                tvKelas.text = getUser.userKelas
+                tvHasilKuisSatu.text = quizResult.KuisSatu.toString()
+                tvHasilKuisDua.text = quizResult.KuisDua.toString()
+                tvHasilKuisTiga.text = quizResult.KuisTiga.toString()
+                tvHasilKuisEmpat.text = quizResult.KuisEmpat.toString()
+                tvHasilKuisLima.text = quizResult.KuisLima.toString()
                 tvHasilKuisFinal.text = finalScore.toInt().toString()
                 tvKuis1.text = textJudulNilai[0]
                 tvKuis2.text = textJudulNilai[1]
@@ -55,5 +59,16 @@ class ProfileActivity : AppCompatActivity() {
             onBackPressed()
             finish()
         }
+    }
+
+    private fun getUser(): userData {
+        val sharedPreferences = getSharedPreferences("userProfile", Context.MODE_PRIVATE)
+        return userData(
+            getUID(),
+            sharedPreferences.getString("userName", "")!!,
+            sharedPreferences.getString("userNIS", "")!!,
+            sharedPreferences.getString("userEmail", "")!!,
+            sharedPreferences.getString("userKelas", "")!!
+        )
     }
 }

@@ -10,10 +10,10 @@
     <item
         android:title="Video"
         android:icon="@drawable/ic_video"
-        android:id="@+id/video"/>
+        android:id="@+id/video" />
     <item
         android:title="Kembali"
         android:id="@+id/back"
         android:icon="@drawable/icon_return"
-        android:iconTint="@color/white"/>
+        android:iconTint="@color/white" />
 </menu>

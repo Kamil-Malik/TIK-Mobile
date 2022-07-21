@@ -11,9 +11,12 @@ import com.google.firebase.ktx.Firebase
 
 object Logout {
 
-    fun Logout(mActivity: Activity) {
+    fun logout(mActivity: Activity) {
+        val shardPref =
+            mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE).edit().clear()
+                .apply()
+        Log.d(TAG, "logout: $shardPref")
         Firebase.auth.signOut()
-        mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE).edit().clear().commit()
         Intent(mActivity, LoginActivity::class.java).also {
             mActivity.startActivity(it)
             mActivity.finish()

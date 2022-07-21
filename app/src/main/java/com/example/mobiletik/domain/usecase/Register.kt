@@ -2,16 +2,15 @@ package com.example.mobiletik.domain.usecase
 
 import android.app.Activity
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import com.example.mobiletik.domain.usecase.GetUID.getUID
+import com.example.mobiletik.domain.usecase.GreetUser.greetUser
 import com.example.mobiletik.domain.utility.Loading
-import com.example.mobiletik.model.data.QuizAttempt
-import com.example.mobiletik.model.data.QuizResult
 import com.example.mobiletik.model.data.TemplateUser
-import com.example.mobiletik.model.data.userData
-import com.example.mobiletik.presentation.view.LoginActivity
+import com.example.mobiletik.presentation.view.MainActivity
 import com.example.mobiletik.presentation.view.RegisterActivity
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuthEmailException
@@ -60,24 +59,39 @@ object Register {
             val uid = getUID()
 
             //Break into 3 Jobs
-            val user = userData(
+            val user = TemplateUser(
                 uid,
                 userName,
                 userNIS,
                 email,
                 userKelas
             )
-            val defaultQuiz = QuizResult()
-            val defaultAttempt = QuizAttempt()
 
             Firebase.firestore.collection("Users").document(uid).set(user).await()
-            Firebase.firestore.collection("Users").document(uid).set(defaultQuiz).await()
-            Firebase.firestore.collection("Users").document(uid).set(defaultAttempt).await()
+            val sharedPref = mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
+            with(sharedPref.edit()) {
+                putString("userName", user.userName)
+                putString("userEmail", user.userEmail)
+                putString("userNIS", user.userNIS)
+                putString("userKelas", user.userKelas)
+                putLong("kuisSatu", user.kuisSatu)
+                putLong("kuisDua", user.kuisDua)
+                putLong("kuisTiga", user.kuisTiga)
+                putLong("kuisEmpat", user.kuisEmpat)
+                putLong("kuisLima", user.kuisLima)
+                putLong("kuisSatuAttempt", user.kuisSatuAttempt)
+                putLong("kuisDuaAttempt", user.kuisDuaAttempt)
+                putLong("kuisTigaAttempt", user.kuisTigaAttempt)
+                putLong("kuisEmpatAttempt", user.kuisEmpatAttempt)
+                putLong("kuisLimaAttempt", user.kuisLimaAttempt)
+                apply()
+            }
             Log.d(TAG, "signUpWithEmailAndPassword: $user")
 
             withContext(Dispatchers.Main) {
+                greetUser(mActivity)
                 loading.dismissLoading()
-                Intent(mActivity, LoginActivity::class.java).also {
+                Intent(mActivity, MainActivity::class.java).also {
                     mActivity.startActivity(it)
                     mActivity.finish()
                 }

@@ -48,7 +48,8 @@ object ExportCSV {
         val writer = CsvWriter().openAndGetRawWriter(file, true)
         writer.writeRow(header)
         CoroutineScope(Dispatchers.IO).launch {
-            val query = Firebase.firestore.collection("Users").orderBy("userKelas", Query.Direction.ASCENDING).get().await()
+            val query = Firebase.firestore.collection("Users")
+                .orderBy("userKelas", Query.Direction.ASCENDING).get().await()
             withContext(Dispatchers.Main) {
                 for (document in query.documents) {
                     val avgScore = getAverage(
