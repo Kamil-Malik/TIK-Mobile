@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="HardcodedText">
+    <item
+        android:id="@+id/materiPDF"
+        android:icon="@drawable/ic_book"
+        android:title="Materi"
+        tools:ignore="HardcodedText" />
+    <item
+        android:title="Video"
+        android:icon="@drawable/ic_video"
+        android:id="@+id/video"/>
+    <item
+        android:title="Kembali"
+        android:id="@+id/back"
+        android:icon="@drawable/icon_return"
+        android:iconTint="@color/white"/>
+</menu>

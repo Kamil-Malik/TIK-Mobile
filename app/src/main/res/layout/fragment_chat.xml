@@ -48,12 +48,13 @@
             android:hint="@string/isi_pesan"
             android:importantForAutofill="no"
             android:inputType="text"
-            android:maxLines="5"
+            android:maxLines="4"
             android:paddingTop="@dimen/_8sdp"
             android:paddingEnd="@dimen/_5sdp"
             android:paddingBottom="@dimen/_8sdp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
+            android:textSize="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/btnKirim"
@@ -65,14 +66,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btnsend"
-            android:padding="10dp"
-            android:paddingStart="12dp"
+            android:padding="12dp"
+            android:paddingStart="14dp"
             android:src="@drawable/ic_send"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/white"
-            tools:ignore="ContentDescription,RtlSymmetry" />
+            tools:ignore="ContentDescription,RtlSymmetry,SpeakableTextPresentCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

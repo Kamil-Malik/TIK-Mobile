@@ -10,13 +10,13 @@ import com.example.mobiletik.databinding.FragmentMateriBinding
 
 class MateriFragment : Fragment(R.layout.fragment_materi) {
 
-    private lateinit var binding : FragmentMateriBinding
+    private lateinit var binding: FragmentMateriBinding
 
-    override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMateriBinding.bind(view)
 
-        val textButton = resources.getStringArray(R.array.judulMateri)
+        val textButton = resources.getStringArray(R.array.listID)
         with(binding) {
             bab1.text = textButton[0]
             bab2.text = textButton[1]

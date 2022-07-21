@@ -34,93 +34,138 @@ class KuisActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         binding.tvPenjelasan.isVisible = false
+        Log.d(TAG, "onCreate: Penjelasan ditutup")
+
         val quizTitle = intent.getStringExtra("nomor") as String
+        Log.d(TAG, "onCreate: Judul Kuis adalah $quizTitle")
+
         val loading = Loading(this)
         loading.startLoading()
+        Log.d(TAG, "onCreate: Loading dimulai")
+
         lifecycleScope.launch {
-            withContext(Dispatchers.IO) {
-                val title =
-                    Firebase.database.getReference("Kuis").child(quizTitle).child("judul").get()
-                        .await()
-                withContext(Dispatchers.Main) {
-                    binding.judulKuis.text = title.value.toString()
+            val handler = CoroutineExceptionHandler { _, _ ->
+                CoroutineScope(Dispatchers.Main).launch {
+                    Toast.makeText(
+                        this@KuisActivity,
+                        "Silahkan periksa koneksi terlebih dahulu",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    finish()
                 }
             }
-            withContext(Dispatchers.Main) {
-                getQuestion(quizTitle, indexQuestion)
+            withContext(Dispatchers.IO + handler) {
+                val startingPoint =
+                    Firebase.database.getReference("Kuis").child(quizTitle).get().await()
+                Log.d(TAG, "onCreate: Data didapatkan. $startingPoint")
+
+                val judul = startingPoint.child("judul").value as String
+                val soal = startingPoint.child("1").child("soal").value as String
+                val opsiA = startingPoint.child("1").child("opsiA").value as String
+                val opsiB = startingPoint.child("1").child("opsiB").value as String
+                val opsiC = startingPoint.child("1").child("opsiC").value as String
+                val opsiD = startingPoint.child("1").child("opsiD").value as String
+                val penjelasan = startingPoint.child("1").child("penjelasan").value as String
+                val kunci = startingPoint.child("1").child("kunci").value as String
+
+                withContext(Dispatchers.Main) {
+                    binding.judulKuis.text = judul
+                    binding.soal.text = soal
+                    binding.nomorsoal.text = "Soal Nomor : $indexQuestion"
+                    binding.opsiA.text = opsiA
+                    binding.opsiB.text = opsiB
+                    binding.opsiC.text = opsiC
+                    binding.opsiD.text = opsiD
+                    correctAnswer = kunci
+                    this@KuisActivity.penjelasan = penjelasan
+                    Log.d(TAG, "onCreate: Tampilan selesai dimuat")
+                }
             }
         }
+
         loading.dismissLoading()
-        with(binding) {
-            jawabanUser.text = answer
-//            BTN A
-            opsiA.setOnClickListener {
-                jawabanUser.text = opsiA.text
-            }
-//            BTN B
-            opsiB.setOnClickListener {
-                jawabanUser.text = opsiB.text
-            }
-//            BTN C
-            opsiC.setOnClickListener {
-                jawabanUser.text = opsiC.text
-            }
-//            BTN D
-            opsiD.setOnClickListener {
-                jawabanUser.text = opsiD.text
-            }
-//            BTN Next
-            btnNext.setOnClickListener {
-                if (btnNext.text == "Periksa Jawaban") {
-                    tvPenjelasan.text = penjelasan
-                    tvPenjelasan.isVisible = true
-                    if (indexQuestion == 5) {
-                        btnNext.text = "Selesai"
-                    } else {
-                        btnNext.text = "Selanjutnya"
-                    }
-                    if (binding.jawabanUser.text == correctAnswer) {
-                        score += 20
-                        indexQuestion += 1
-                        binding.jawabanUser.text = ""
-                        ToastFunction.toastShort(
-                            this@KuisActivity,
-                            "Jawaban Benar, skor sekarang $score"
-                        )
-                    } else {
-                        indexQuestion += 1
-                        binding.jawabanUser.text = ""
-                        ToastFunction.toastShort(
-                            this@KuisActivity,
-                            "Jawaban Salah, skor sekarang $score"
-                        )
-                    }
-                } else if (btnNext.text == "Selanjutnya") {
-                    tvPenjelasan.isVisible = false
-                    tvPenjelasan.text = ""
-                    btnNext.text = "Periksa Jawaban"
-                    getQuestion(quizTitle, indexQuestion)
-                } else if (btnNext.text == "Selesai") {
-                    toastScore(score)
-                    updateScoreInSharedPreferences(quizTitle, score)
-                    updateAttemptIntoSharedPref(quizTitle)
-                    uploadQuizScoreIntoFirestore(quizTitle, score)
-                    updateAttemptIntoFirestore(quizTitle)
+        Log.d(TAG, "onCreate: Loading selesai")
+
+
+        binding.jawabanUser.text = answer
+        Log.d(TAG, "onCreate: jawaban benar : $answer")
+
+        binding.opsiA.setOnClickListener { //Btn Opsi A
+            binding.jawabanUser.text = binding.opsiA.text
+        }
+
+        binding.opsiB.setOnClickListener { //Btn Opsi B
+            binding.jawabanUser.text = binding.opsiB.text
+        }
+
+        binding.opsiC.setOnClickListener { //Btn Opsi C
+            binding.jawabanUser.text = binding.opsiC.text
+        }
+
+        binding.opsiD.setOnClickListener { //Btn Opsi D
+            binding.jawabanUser.text = binding.opsiD.text
+        }
+
+        binding.btnNext.setOnClickListener { //Btn Periksa Jawaban / Selanjutnya / Selesai
+            if (binding.btnNext.text == "Periksa Jawaban") {
+                binding.tvPenjelasan.text = penjelasan
+                binding.tvPenjelasan.isVisible = true
+
+                if (indexQuestion == 5) {
+                    binding.btnNext.text = "Selesai"
+                } else {
+                    binding.btnNext.text = "Selanjutnya"
                 }
+                Log.d(TAG, "onCreate: Tulisan sekarang $binding.btnNext.text")
+
+                if (binding.jawabanUser.text == correctAnswer) {
+                    score += 20
+                    indexQuestion += 1
+                    binding.jawabanUser.text = ""
+                    ToastFunction.toastShort(
+                        this@KuisActivity,
+                        "Jawaban Benar, skor sekarang $score"
+                    )
+                } else {
+                    indexQuestion += 1
+                    binding.jawabanUser.text = ""
+                    ToastFunction.toastShort(
+                        this@KuisActivity,
+                        "Jawaban Salah, skor sekarang $score"
+                    )
+                }
+
+            } else if (binding.btnNext.text == "Selanjutnya") {
+                binding. tvPenjelasan.isVisible = false
+                binding.tvPenjelasan.text = ""
+                binding.btnNext.text = "Periksa Jawaban"
+                getQuestion(quizTitle, indexQuestion)
+            } else if (binding.btnNext.text == "Selesai") {
+                toastScore(score)
+                updateScoreInSharedPreferences(quizTitle, score)
+                updateAttemptIntoSharedPref(quizTitle)
+                uploadQuizScoreIntoFirestore(quizTitle, score)
+                updateAttemptIntoFirestore(quizTitle)
             }
         }
     }
 
     private fun updateAttemptIntoFirestore(quizTitle: String) {
         val newIndex = quizTitle[0].lowercase() + quizTitle.removeRange(0, 1) + "Attempt"
+        Log.d(TAG, "updateAttemptIntoFirestore: $newIndex")
+
         val currentAttempt =
             getSharedPreferences("userProfile", Context.MODE_PRIVATE).getLong(newIndex, 0)
+        Log.d(TAG, "updateAttemptIntoFirestore: Jumlah percobaan $currentAttempt")
+        
         UpdateAttemptIntoFirestore.updateAttemptIntoFirestore(quizTitle, currentAttempt)
     }
 
     private fun updateAttemptIntoSharedPref(quizTitle: String) {
         val sharedPref = getSharedPreferences("userProfile", Context.MODE_PRIVATE)
         val newIndex = quizTitle[0].lowercase() + quizTitle.removeRange(0, 1) + "Attempt"
+        Log.d(TAG, "updateAttemptIntoSharedPref: Index baru $newIndex")
+
         val attempt = sharedPref.getLong(newIndex, 0)
         sharedPref.edit().putLong(newIndex, attempt + 1).apply()
     }
@@ -133,6 +178,7 @@ class KuisActivity : AppCompatActivity() {
                 getQuestion(quizTitle, indexQuestion)
             }
         }
+
         CoroutineScope(Dispatchers.IO + handler).launch {
             val question = Firebase.database.getReference("Kuis").child(quizTitle)
                 .child(indexQuestion.toString()).get().await()

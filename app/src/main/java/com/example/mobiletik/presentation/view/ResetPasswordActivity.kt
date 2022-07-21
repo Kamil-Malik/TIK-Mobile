@@ -10,9 +10,9 @@ import com.example.mobiletik.domain.usecase.ResetPasswordValidation.validate
 
 class ResetPasswordActivity : AppCompatActivity() {
 
-    internal lateinit var binding : ActivityResetPasswordBinding
+    internal lateinit var binding: ActivityResetPasswordBinding
 
-    override fun onCreate(savedInstanceState : Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResetPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -23,7 +23,11 @@ class ResetPasswordActivity : AppCompatActivity() {
                 if (validation.result) {
                     ResetPassword.sendResetPasswordLink(this@ResetPasswordActivity, email)
                 } else {
-                    Toast.makeText(this@ResetPasswordActivity, validation.errorMessage, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@ResetPasswordActivity,
+                        validation.errorMessage,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
 

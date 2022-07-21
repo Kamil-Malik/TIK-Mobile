@@ -26,7 +26,7 @@
         tools:ignore="RtlSymmetry" />
 
     <Button
-        android:id="@+id/btn_export"
+        android:id="@+id/btnExport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/yellow"
@@ -35,7 +35,7 @@
         android:paddingTop="5dp"
         android:paddingEnd="@dimen/_15sdp"
         android:paddingBottom="5dp"
-        android:text="Export Nilai"
+        android:text="Export"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_export"
+        app:layout_constraintTop_toBottomOf="@+id/btnExport"
         tools:ignore="RtlSymmetry" />
 
     <Button
@@ -67,13 +67,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_home"
+        android:drawableEnd="@drawable/ic_exit"
         android:paddingStart="@dimen/_15sdp"
         android:paddingTop="5dp"
         android:paddingEnd="@dimen/_15sdp"
         android:paddingBottom="5dp"
-        android:textAlignment="textStart"
-        android:drawableEnd="@drawable/ic_exit"
         android:text="@string/logout"
+        android:textAlignment="textStart"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,7 +1,9 @@
 package com.example.mobiletik.domain.usecase
 
 import android.app.Activity
+import android.content.ContentValues.TAG
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import com.example.mobiletik.domain.utility.Loading
 import com.example.mobiletik.presentation.view.MainActivity
@@ -23,6 +25,7 @@ object Login {
         val loading = Loading(mActivity)
         val handler = CoroutineExceptionHandler { _, exception ->
             CoroutineScope(Dispatchers.Main).launch {
+                Log.w(TAG, "login: Login gagal, penyebabnya ${exception.message.toString()}")
                 loading.dismissLoading()
                 when (exception) {
                     is FirebaseAuthInvalidUserException -> toastError(
@@ -41,6 +44,7 @@ object Login {
         loading.startLoading()
         CoroutineScope(Dispatchers.IO + handler).launch {
             Firebase.auth.signInWithEmailAndPassword(email, password).await()
+            Log.d(TAG, "login: Login berhasil")
             withContext(Dispatchers.Main) {
                 SaveIntoSharedpref.saveData(mActivity)
                 loading.dismissLoading()

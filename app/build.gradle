@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id 'com.google.firebase.appdistribution'
 }
 
 android {
@@ -13,7 +14,7 @@ android {
         minSdk 27
         targetSdk 32
         versionCode 1
-        versionName "1.0"
+        versionName "1.11"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -23,6 +24,10 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            minifyEnabled true
+            shrinkResources true
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -30,9 +35,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-    viewBinding {
-        enabled = true
     }
     buildFeatures {
         viewBinding true
@@ -43,8 +45,6 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'com.google.mlkit:vision-internal-vkp:18.2.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.2.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -52,6 +52,7 @@ dependencies {
     //     Firebase
     implementation platform('com.google.firebase:firebase-bom:30.1.0') //Firebase BOM Dependency
     implementation 'com.google.firebase:firebase-analytics-ktx' //Analytic Performance
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.2.1' //Firebase Firestore
     implementation 'com.google.firebase:firebase-auth-ktx' //Authentication
     implementation 'com.google.firebase:firebase-database-ktx'  //Realtime Database
     implementation 'com.google.firebase:firebase-storage-ktx' //Firebase Storage
@@ -62,12 +63,15 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4' //ConstraintLayout
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0' //Fragment
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.0-alpha01" //ViewModel
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.0' //Live Data
 
     implementation 'com.intuit.sdp:sdp-android:1.0.6' //Scalable Density Pixel
-    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1' //Barteks PDF Reader
+    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.4.0") //CSV Writer
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.0.1' //YT Player
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1") //Coroutine
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4") //Coroutine
     implementation("androidx.work:work-runtime-ktx:2.7.1") //Viewmodel Scope
 
 //    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'

@@ -45,15 +45,10 @@
 
     <array name="fragment_kuis">
         <item>Anda telah mengerjakan Kuis ini</item>
-        <item>Selamat mengerjakan Remedial</item>
         <item>Selamat mengerjakan Kuis ini</item>
+        <item>Selamat mengerjakan Remedial</item>
+        <item>Anda telah mengerjakan kuis sebanyak 3 kali, silahkan hubungi guru</item>
     </array>
-    <string name="kuisTelahDikerjakan">Anda telah mengerjakan Kuis ini</string>
-    <string name="selamatMengerjakan">Selamat mengerjakan kuis ini</string>
-
-
-
-
 
     <string name="backbtn">backBtn</string>
     <string name="final_txt">Final</string>
@@ -67,7 +62,7 @@
         <item>Kuis 5</item>
     </string-array>
 
-    <string-array name="judulMateri">
+    <string-array name="listID">
         <item>BAB 1 - Operasi Dasar Komputer</item>
         <item>Bab 2 - Fungsi dan Proses Kerja Peralatan Teknologi Informasi dan Komunikasi</item>
         <item>Bab 3 - Etika dan Moral dalam Teknologi Informasi dan Komunikasi</item>
@@ -76,7 +71,11 @@
     </string-array>
 
     <string-array name="urlMateri">
-        <item tools:ignore="TypographyDashes">https://62cd316a87c40b4982e995b2--unrivaled-concha-459c60.netlify.app/</item>
+        <item tools:ignore="Typos">0vfvuTyQ1E0</item>
+        <item>7iQP6uEc7Ko</item>
+        <item>bQK9sS6AvN0</item>
+        <item>K-8ADRBn_OM</item>
+        <item>fn52SOqv3t8</item>
     </string-array>
 
     <string-array name="namaFile">
@@ -87,8 +86,18 @@
         <item>bab5</item>
     </string-array>
 
+    <string-array name="idKuis">
+        <item>KuisSatu</item>
+        <item>KuisDua</item>
+        <item>KuisTiga</item>
+        <item>KuisEmpat</item>
+        <item>KuisLima</item>
+    </string-array>
+
     <string name="title_activity_bab_pertama">BabPertamaActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="mengaktifkan_dan_mematikan_komputer_sesuai_prosedur">Mengaktifkan dan mematikan komputer sesuai prosedur</string>
+    <string name="id_kuis">ID Kuis</string>
+    <string name="daftar_siswa">Daftar Siswa</string>
 </resources>

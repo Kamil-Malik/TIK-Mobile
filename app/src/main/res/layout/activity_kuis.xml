@@ -1,169 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
-    android:padding="@dimen/_15sdp"
-    tools:context=".presentation.view.KuisActivity">
+    android:background="@color/grey">
 
-    <TextView
-        android:id="@+id/judul_kuis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_12sdp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/operasi_dasar_komputer" />
-
-    <TextView
-        android:id="@+id/nomorsoal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/soal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/judul_kuis"
-        tools:text="Soal Nomor : 1" />
-
-    <TextView
-        android:id="@+id/soal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:justificationMode="inter_word"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomorsoal"
-        tools:text="Soal Satu" />
-
-    <Button
-        android:id="@+id/opsiA"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/btn_home"
-        android:drawableEnd="@drawable/ic_next"
-        android:justificationMode="inter_word"
-        android:paddingStart="@dimen/_10sdp"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/soal"
-        tools:ignore="RtlSymmetry"
-        tools:text="Jawaban A" />
+        android:background="@color/grey"
+        android:padding="@dimen/_15sdp"
+        tools:context=".presentation.view.KuisActivity">
 
-    <Button
-        android:id="@+id/opsiB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btn_home"
-        android:drawableEnd="@drawable/ic_next"
-        android:justificationMode="inter_word"
-        android:paddingStart="@dimen/_10sdp"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/opsiA"
-        tools:ignore="RtlSymmetry"
-        tools:text="Jawaban B" />
+        <TextView
+            android:id="@+id/judul_kuis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/operasi_dasar_komputer" />
 
-    <Button
-        android:id="@+id/opsiC"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btn_home"
-        android:drawableEnd="@drawable/ic_next"
-        android:justificationMode="inter_word"
-        android:paddingStart="@dimen/_10sdp"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/opsiB"
-        tools:ignore="RtlSymmetry"
-        tools:text="Jawaban C" />
+        <TextView
+            android:id="@+id/nomorsoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toTopOf="@id/soal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/judul_kuis"
+            tools:text="Soal Nomor : 1" />
 
-    <Button
-        android:id="@+id/opsiD"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btn_home"
-        android:drawableEnd="@drawable/ic_next"
-        android:justificationMode="inter_word"
-        android:paddingStart="@dimen/_10sdp"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/opsiC"
-        tools:ignore="RtlSymmetry"
-        tools:text="Jawaban D" />
+        <TextView
+            android:id="@+id/soal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:justificationMode="inter_word"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nomorsoal"
+            tools:text="Soal Satu" />
 
-    <TextView
-        android:id="@+id/jawabanUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:justificationMode="inter_word"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/opsiD"
-        tools:text="Jawaban User" />
+        <Button
+            android:id="@+id/opsiA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/btn_home"
+            android:drawableEnd="@drawable/ic_next"
+            android:justificationMode="inter_word"
+            android:paddingStart="@dimen/_10sdp"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/soal"
+            tools:ignore="RtlSymmetry"
+            tools:text="Jawaban A" />
 
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn"
-        android:padding="10dp"
-        android:text="Periksa Jawaban"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jawabanUser"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/opsiB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_home"
+            android:drawableEnd="@drawable/ic_next"
+            android:justificationMode="inter_word"
+            android:paddingStart="@dimen/_10sdp"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/opsiA"
+            tools:ignore="RtlSymmetry"
+            tools:text="Jawaban B" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
-        android:text="Penjelasan"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jawabanUser"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/opsiC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_home"
+            android:drawableEnd="@drawable/ic_next"
+            android:justificationMode="inter_word"
+            android:paddingStart="@dimen/_10sdp"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/opsiB"
+            tools:ignore="RtlSymmetry"
+            tools:text="Jawaban C" />
 
-    <TextView
-        android:id="@+id/tvPenjelasan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:justificationMode="inter_word"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:text="Perangkat hardware tanpa software akan menjadi sebuah mesin yang tidak memiliki fungsi karena tidak ada yang memberikan perintah kepada hardware untuk melakukan fungsi tertentu." />
+        <Button
+            android:id="@+id/opsiD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_home"
+            android:drawableEnd="@drawable/ic_next"
+            android:justificationMode="inter_word"
+            android:paddingStart="@dimen/_10sdp"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/opsiC"
+            tools:ignore="RtlSymmetry"
+            tools:text="Jawaban D" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/jawabanUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:justificationMode="inter_word"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/opsiD"
+            tools:text="Jawaban User" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:text="Periksa Jawaban"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jawabanUser"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="80dp"
+            android:text="Penjelasan"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jawabanUser"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvPenjelasan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:justificationMode="inter_word"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:text="Perangkat hardware tanpa software akan menjadi sebuah mesin yang tidak memiliki fungsi karena tidak ada yang memberikan perintah kepada hardware untuk melakukan fungsi tertentu." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

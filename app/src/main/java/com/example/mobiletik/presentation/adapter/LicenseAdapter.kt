@@ -7,19 +7,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mobiletik.databinding.LicenseAdapterBinding
 import com.example.mobiletik.model.data.LicenseData
 
-class LicenseAdapter(private val licenseData : List<LicenseData>) :
+class LicenseAdapter(private val licenseData: List<LicenseData>) :
     RecyclerView.Adapter<LicenseAdapter.ViewHolder>() {
 
-    inner class ViewHolder(val binding : LicenseAdapterBinding) :
+    inner class ViewHolder(val binding: LicenseAdapterBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent : ViewGroup, viewType : Int) : ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = LicenseAdapterBinding.inflate(layoutInflater, parent, false)
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder : ViewHolder, position : Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.apply {
             tvJudul.text = licenseData[position].judulLisensi
             tvLink.text = licenseData[position].linkLisensi
@@ -31,7 +31,7 @@ class LicenseAdapter(private val licenseData : List<LicenseData>) :
         }
     }
 
-    override fun getItemCount() : Int {
+    override fun getItemCount(): Int {
         return licenseData.size
     }
 

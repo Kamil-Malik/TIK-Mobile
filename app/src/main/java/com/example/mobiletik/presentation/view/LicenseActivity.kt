@@ -14,10 +14,10 @@ import kotlinx.coroutines.withContext
 
 class LicenseActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityLicenseBinding
+    private lateinit var binding: ActivityLicenseBinding
 
     @SuppressLint("ResourceAsColor")
-    override fun onCreate(savedInstanceState : Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLicenseBinding.inflate(layoutInflater)
         val view = binding.root

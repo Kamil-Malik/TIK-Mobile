@@ -14,10 +14,10 @@ import kotlinx.coroutines.launch
 
 class ProfileActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityProfileBinding
+    private lateinit var binding: ActivityProfileBinding
 
     @SuppressLint("SetTextI18n")
-    override fun onCreate(savedInstanceState : Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         val view = binding.root

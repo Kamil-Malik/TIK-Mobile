@@ -18,7 +18,7 @@ object ResetPassword {
     private const val networkException = "Silahkan periksa koneksi dan coba lagi"
     private const val authEmailException = "Email tidak terdaftar, silahkan Daftar terlebih dahulu"
 
-    fun sendResetPasswordLink(mActivity : ResetPasswordActivity, email : String) {
+    fun sendResetPasswordLink(mActivity: ResetPasswordActivity, email: String) {
         val loading = Loading(mActivity)
         val handler = CoroutineExceptionHandler { _, exception ->
             CoroutineScope(Dispatchers.Main).launch {
@@ -43,7 +43,7 @@ object ResetPassword {
         }
     }
 
-    private fun toastError(mActivity : Activity, error : String) {
+    private fun toastError(mActivity: Activity, error: String) {
         Toast.makeText(mActivity, error, Toast.LENGTH_SHORT).show()
     }
 }

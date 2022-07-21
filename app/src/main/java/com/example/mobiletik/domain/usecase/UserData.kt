@@ -2,12 +2,11 @@ package com.example.mobiletik.domain.usecase
 
 import android.app.Activity
 import android.content.Context
-import com.example.mobiletik.model.data.ScoreKuis
 import com.example.mobiletik.model.data.TemplateUser
 
 object UserData {
 
-    fun getUserDataFromSharedpref(mActivity : Activity) : TemplateUser {
+    fun getUserDataFromSharedpref(mActivity: Activity): TemplateUser {
         val sharedPref = mActivity.getSharedPreferences("userProfile", Context.MODE_PRIVATE)
         with(sharedPref) {
             val userName = getString("userName", "")!!
@@ -20,7 +19,7 @@ object UserData {
             val kuis4 = getLong("kuisEmpat", 0)
             val kuis5 = getLong("kuisLima", 0)
             return TemplateUser(
-                Authentication.getUID(),
+                GetUID.getUID(),
                 userName,
                 userNis,
                 userEmail,
